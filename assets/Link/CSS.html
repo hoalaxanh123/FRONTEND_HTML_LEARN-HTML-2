@@ -1,0 +1,1008 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+          "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+
+    <!-- start: Meta -->
+    <title>1510289</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="shortcut icon" href="../img/Images/fav.ico" />
+    <!--Thiết lập định dạng xem trên điện thoại-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- end: Mobile Specific -->
+    <!-- start: CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/style.min.css" rel="stylesheet">
+    <link href="../css/parallax-slider.css" rel="stylesheet">
+    <!-- end: CSS -->
+
+</head>
+<body id="NonBackground">
+
+    <script>
+        var checkUserLG = 0, checkPassLG = 0;
+        function Building() {
+            alert("Sorry, this site is under construction :((");
+        }
+        function CheckLG(Item) {
+
+            var UserLG, PassLG;
+            UserLG = String(document.getElementById("UserLG").value);
+            PassLG = String(document.getElementById("PassLG").value);
+
+            switch (Item) {
+                case "UserLG":
+                    if (UserLG.length >= 10) {
+                        document.getElementById("CheckUserLogin").innerHTML = "<img src='../img/IconTest/ok.png' alt='OK'/>";
+                        checkUserLG = 1;
+                    }
+                    else {
+                        document.getElementById("CheckUserLogin").innerHTML = "<img src='../img/IconTest/error.png' title='Tên đăng nhập ít nhất 10 ký tự'/>";
+                        checkUserLG = 0;
+                    }
+                    break;
+                case "PassLG":
+                    if (PassLG.length >= 6) {
+                        document.getElementById("CheckPassLogin").innerHTML = "<img src='../img/IconTest/ok.png' alt='OK'/>";
+                        checkPassLG = 1;
+                    }
+                    else {
+                        document.getElementById("CheckPassLogin").innerHTML = "<img src='../img/IconTest/error.png' title='Mật khẩu ít nhất 6 ký tự'/>";
+                        checkPassLG = 0;
+                    }
+                    break;
+
+
+
+            }
+        }
+        function Login() {
+            //Kiem tra co duoc dang nhap khong
+            //alert(checkPassLG);
+            //alert(checkUserLG);
+
+            if (checkPassLG != 1 || checkUserLG != 1) {
+
+                alert("Đăng nhập không thành công -_-!")
+            }
+
+            if (checkPassLG == 1 && checkUserLG == 1) {
+
+                alert("Đăng nhập  thành công ^_^!");
+                document.getElementById('id01').style.display = 'none';
+
+            }
+
+
+        }
+        function Check() {
+            //alert("OK");
+            var User, Pass, Birthday, Email, SDT;
+            User = String(document.getElementById("UserDK").value);
+            //alert(User);
+            Pass = String(document.getElementById("PassDK").value);
+            //alert(Pass);
+            Birthday = document.getElementById("NSinhDK").value;
+            //alert(Birthday);
+            Email = String(document.getElementById("MailDK").value);
+            //alert(Email);
+            SDT = String(document.getElementById("PhoneDK").value);
+            //alert(SDT);
+            var check1 = 0, check2 = 0, check3 = 0, check4 = 0, check5 = 0;
+            if (User.length >= 10) {
+
+                //document.getElementById("CheckUser").innerHTML = "OK";
+                document.getElementById("CheckUser").innerHTML = "<img src='../img/IconTest/ok.png' alt='OK'/>";
+                document.getElementById("TenNhap").innerHTML = User;
+                check1 = 1;
+            }
+            else {
+                //document.getElementById("CheckUser").innerHTML = "Trường này không được để trống";
+                document.getElementById("CheckUser").innerHTML = "<img src='../img/IconTest/error.png' title='Tên đăng nhập ít nhất 10 ký tự'/>";
+                check1 = 0;
+            }
+            if (Pass.length >= 6) {
+
+                document.getElementById("CheckPass").innerHTML = "OK";
+                document.getElementById("CheckPass").innerHTML = "<img src='../img/IconTest/ok.png' alt='OK'/>";
+                document.getElementById("MKNhap").innerHTML = Pass;
+                check1 = 1;
+            }
+            else {
+                document.getElementById("CheckPass").innerHTML = "Mật khẩu ít nhất 6 ký tự";
+                document.getElementById("CheckPass").innerHTML = "<img src='../img/IconTest/error.png' title='Mật khẩu ít nhất 6 ký tự'/>";
+
+                check1 = 0;
+            }
+
+            ////Kiểm tra ngày tháng năm sinh đúng định dạng
+            var date_regex = /^(0[1-9]|1\d|2\d|3[01])\/(0[1-9]|1[0-2])\/(19|20)\d{2}$/;
+
+            if (!date_regex.test(Birthday)) {
+                document.getElementById("CheckDate").innerHTML = "Sai giá trị hoặc định dạng (dd/yy/mmmm)";
+                document.getElementById("CheckDate").innerHTML = "<img src='../img/IconTest/error.png' title='Sai giá trị hoặc định dạng (dd/yy/mmmm)'/>";
+                check2 = 0;
+
+            }
+            else {
+                //document.getElementById("CheckDate").innerHTML = "OK";
+                document.getElementById("CheckDate").innerHTML = "<img src='../img/IconTest/ok.png' alt='OK'/>";
+
+                document.getElementById("NSNhap").innerHTML = Birthday;
+                check2 = 1;
+            }
+            //Kiểm tra email
+            var email_regex = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
+            if (!email_regex.test(Email)) {
+                //document.getElementById("CheckMail").innerHTML = "Sai giá trị hoặc định dạng (xxx@xxx.com)";
+                document.getElementById("CheckMail").innerHTML = "<img src='../img/IconTest/error.png' title='Sai giá trị hoặc định dạng (xxx@xxx.com)'/>";
+
+
+                check3 = 0;
+            }
+            else {
+                //document.getElementById("CheckMail").innerHTML = "OK";
+                document.getElementById("CheckMail").innerHTML = "<img src='../img/IconTest/ok.png' alt='OK'/>";
+
+                document.getElementById("MailNhap").innerHTML = Email;
+                check3 = 1;
+            }
+            //Kiểm tra SDT
+            var mobile_regex = /^0\d{10}$/;
+            if (!mobile_regex.test(SDT)) {
+                document.getElementById("CheckPhone").innerHTML = "Sai giá trị hoặc định dạng (0xxxxxxxx-11 số)";
+                document.getElementById("CheckPhone").innerHTML = "<img src='../img/IconTest/error.png' title='Sai giá trị hoặc định dạng (0xxxxxxxx-11 số)'/>";
+                check4 = 0;
+            }
+            else {
+                //alert("OK");
+                //document.getElementById("CheckPhone").innerHTML = "OK";
+                document.getElementById("CheckPhone").innerHTML = "<img src='../img/IconTest/ok.png' alt='OK'/>";
+                document.getElementById("SDTNhap").innerHTML = SDT;
+                check4 = 1;
+            }
+            //Kiểm tra đủ điều kiện đăng ký
+
+            if (check1 == 1 && check2 == 1 && check3 == 1 && check4 == 1) {
+                return true;
+            }
+
+            else {
+                return false;
+            }
+        }
+
+        function DK() {
+            if (Check()) {
+                document.getElementById('id02').style.display = 'none';
+                document.getElementById('id03').style.display = 'block';
+                document.getElementById('id01').style.display = 'none';
+            }
+
+
+        }
+        function ChuyenSangDN() {
+            document.getElementById('id02').style.display = 'none';
+            document.getElementById('id03').style.display = 'none';
+            document.getElementById('id01').style.display = 'block';
+        }
+
+    </script>
+    <!--start: Navbar -->
+    <nav class="navbar navbar-default" role="navigation" id="NonBackground">
+        <!--start: Container -->
+        <div class="container">
+            <!-- Thu Menu lại thành 1 nút menu khi dùng điện thoại hay thu nhỏ trang web -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navigation" style="max-width: 45px;">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="logo" href="../../index.html"><img src="../img/LogoTest/logo.png" /></a>
+            </div>
+
+
+            <div class="collapse navbar-collapse" id="main-navigation">
+                <ul class="nav navbar-right navbar-nav">
+                    <li class="hvr-sweep-to-bottom"><a href="../../index.html">Home</a></li>
+                    <li class="hvr-sweep-to-bottom"><a href="#">About</a></li>
+                    <!--<li class="hvr-sweep-to-bottom"><a href="/../Link/DangNhap.html">Login</a></li>-->
+                    <li class="hvr-sweep-to-bottom"><a onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</a></li>
+                    <li class="hvr-sweep-to-bottom"><a onclick="document.getElementById('id02').style.display='block'" style="width:auto;">&nbsp;&nbsp;reg&nbsp;&nbsp; </a></li>
+                    <li class="hvr-sweep-to-bottom"><a href="LinkToLAB.html">&nbsp;&nbsp;lab&nbsp;&nbsp; </a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!--/.container-->
+    </nav>
+
+    <!--start: Container -->
+    <div class="container">
+        <!-- start: SlideShow -->
+        <div class="slider">
+
+            <div id="flex1" class="flexslider">
+                <ul class="slides">
+                    <li>
+                        <img src="../img/Images/background.jpg" alt="Image1" />
+                        <div class="slide-caption">
+                            <a href="#" onclick="Building()"><h3>WHY JAVA IS POPULAR TODAY ?</h3></a>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="../img/Images/background2.jpg" alt="Image2" />
+                        <div class="slide-caption hidden-phone">
+                            <a href="#" onclick="Building()"><h3>LEARN PYTHON CODE FIRT ?</h3></a>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="../img/Images/background3.jpg" alt="Image3" />
+                        <div class="slide-caption hidden-phone">
+                            <a href="#" onclick="Building()"><h3>HOW TO DEBUG JAVASCRIPT ?</h3></a>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="../img/Images/background4.jpg" alt="Image3" />
+                        <div class="slide-caption hidden-phone">
+                            <a href="#" onclick="Building()"><h3>WHICH LANGUAGE SHOULD I LEARN ?</h3></a>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="../img/Images/background5.jpg" alt="Image3" />
+                        <div class="slide-caption hidden-phone">
+                            <a href="#" onclick="Building()"><h3>C# IS THE BEST </h3></a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+    <!-- end: SlideShow -->
+
+    <div class="container">
+        <div style="border:2px solid black;width:100%;height:100%;font-size:20px">
+            <p><b>Cascading Style Sheets</b> (<b>CSS</b>) is a <a href="/wiki/Style_sheet_language" title="Style sheet language">style sheet language</a> used for describing the <a href="/wiki/Presentation_semantics" title="Presentation semantics">presentation</a> of a document written in a <a href="/wiki/Markup_language" title="Markup language">markup language</a>.<sup id="cite_ref-1" class="reference"><a href="#cite_note-1">[1]</a></sup> Although most often used to set the visual style of <a href="/wiki/Web_page" title="Web page">web pages</a> and user interfaces written in <a href="/wiki/HTML" title="HTML">HTML</a> and <a href="/wiki/XHTML" title="XHTML">XHTML</a>, the language can be applied to any <a href="/wiki/XML" title="XML">XML</a> document, including <a href="/wiki/Plain_Old_XML" title="Plain Old XML">plain XML</a>, <a href="/wiki/Scalable_Vector_Graphics" title="Scalable Vector Graphics">SVG</a> and <a href="/wiki/XUL" title="XUL">XUL</a>, and is applicable to rendering in <a href="/wiki/Speech_synthesis" title="Speech synthesis">speech</a>, or on other media. Along with HTML and <a href="/wiki/JavaScript" title="JavaScript">JavaScript</a>, CSS is a cornerstone technology used by most websites to create visually engaging webpages, user interfaces for <a href="/wiki/Web_applications" class="mw-redirect" title="Web applications">web applications</a>, and user interfaces for many mobile applications.<sup id="cite_ref-2" class="reference"><a href="#cite_note-2">[2]</a></sup></p>
+            <p>CSS is designed primarily to enable the separation of presentation and content, including aspects such as the <a href="/wiki/Page_layout" title="Page layout">layout</a>, <a href="/wiki/Color" title="Color">colors</a>, and <a href="/wiki/Typeface" title="Typeface">fonts</a>.<sup id="cite_ref-3" class="reference"><a href="#cite_note-3">[3]</a></sup> This separation can improve content <a href="/wiki/Accessibility" title="Accessibility">accessibility</a>, provide more flexibility and control in the specification of presentation characteristics, enable multiple HTML pages to share formatting by specifying the relevant CSS in a separate .css file, and reduce complexity and repetition in the structural content.</p>
+            <p>Separation of formatting and content makes it possible to present the same markup page in different styles for different rendering methods, such as on-screen, in print, by voice (via speech-based browser or <a href="/wiki/Screen_reader" title="Screen reader">screen reader</a>), and on <a href="/wiki/Braille_display" class="mw-redirect" title="Braille display">Braille-based</a> tactile devices. It can also display the web page differently depending on the screen size or viewing device. Readers can also specify a different style sheet, such as a CSS file stored on their own computer, to override the one the author specified.</p>
+            <p>Changes to the <a href="/wiki/Graphic_design" title="Graphic design">graphic design</a> of a document (or hundreds of documents) can be applied quickly and easily, by editing a few lines in the CSS file they use, rather than by changing markup in the documents.</p>
+            <p>The CSS specification describes a priority scheme to determine which style rules apply if more than one rule matches against a particular element. In this so-called <i>cascade</i>, priorities (or <i>weights</i>) are calculated and assigned to rules, so that the results are predictable.</p>
+
+            <p>The CSS specifications are maintained by the <a href="/wiki/World_Wide_Web_Consortium" title="World Wide Web Consortium">World Wide Web Consortium</a> (W3C). Internet media type (<a href="/wiki/MIME_media_type" class="mw-redirect" title="MIME media type">MIME type</a>) <code>text/css</code> is registered for use with CSS by <a class="external mw-magiclink-rfc" rel="nofollow" href="//tools.ietf.org/html/rfc2318">RFC 2318</a> (March 1998). The W3C operates a free <a href="/wiki/W3C_Markup_Validation_Service#CSS_validation" title="W3C Markup Validation Service">CSS validation service</a> for CSS documents.<sup id="cite_ref-4" class="reference"><a href="#cite_note-4">[4]</a></sup></p>
+            <h2><span class="mw-headline" id="Syntax">Syntax</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Cascading_Style_Sheets&amp;action=edit&amp;section=1" title="Edit section: Syntax">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+            <p>CSS has a simple <a href="/wiki/Syntax" title="Syntax">syntax</a> and uses a number of English keywords to specify the names of various style properties.</p>
+            <p>A style sheet consists of a list of <i>rules</i>. Each rule or rule-set consists of one or more <i>selectors</i>, and a <i>declaration block</i>.</p>
+            <h3><span class="mw-headline" id="Selector">Selector</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Cascading_Style_Sheets&amp;action=edit&amp;section=2" title="Edit section: Selector">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+            <p>In CSS, <i>selectors</i> declare which part of the markup a style applies to by matching tags and attributes in the markup itself.</p>
+            <p>Selectors may apply to:</p>
+            <ul>
+                <li>all <a href="/wiki/HTML_element" title="HTML element">elements</a> of a specific type, e.g. the second-level headers <a href="/wiki/HTML_element#Basic_text" title="HTML element">h2</a></li>
+                <li>
+                    elements specified by <a href="/wiki/HTML_attribute" title="HTML attribute">attribute</a>, in particular:
+                    <ul>
+                        <li><i>id</i>: an identifier unique within the document</li>
+                        <li><i>class</i>: an identifier that can annotate multiple elements in a document</li>
+                    </ul>
+                </li>
+                <li>elements depending on how they are placed relative to others in the <a href="/wiki/Document_Object_Model" title="Document Object Model">document tree</a>.</li>
+            </ul>
+            <p>Classes and IDs are case-sensitive, start with letters, and can include alphanumeric characters and underscores. A class may apply to any number of instances of any elements. An ID may only be applied to a single element.</p>
+            <p><i>Pseudo-classes</i> are used in CSS selectors to permit formatting based on information that is not contained in the document tree. One example of a widely used pseudo-class is <code class="mw-highlight" id="" style="" dir="ltr"><span class="p">:</span><span class="nd">hover</span></code>, which identifies content only when the user "points to" the visible element, usually by holding the mouse cursor over it. It is appended to a selector as in <code class="mw-highlight" id="" style="" dir="ltr"><span class="nt">a</span><span class="p">:</span><span class="nd">hover</span></code> or <code class="mw-highlight" id="" style="" dir="ltr"><span class="p">#</span><span class="nn">elementid</span><span class="p">:</span><span class="nd">hover</span></code>. A pseudo-class classifies document elements, such as <code class="mw-highlight" id="" style="" dir="ltr"><span class="p">:</span><span class="nd">link</span></code> or <code class="mw-highlight" id="" style="" dir="ltr"><span class="p">:</span><span class="nd">visited</span></code>, whereas a <i>pseudo-element</i> makes a selection that may consist of partial elements, such as <code class="mw-highlight" id="" style="" dir="ltr"><span class="p">::</span><span class="nd">first-line</span></code> or <code class="mw-highlight" id="" style="" dir="ltr"><span class="p">::</span><span class="nd">first-letter</span></code>.<sup id="cite_ref-5" class="reference"><a href="#cite_note-5">[5]</a></sup></p>
+            <p>Selectors may be combined in many ways to achieve great specificity and flexibility.<sup id="cite_ref-6" class="reference"><a href="#cite_note-6">[6]</a></sup> Multiple selectors may be joined in a spaced list to specify elements by location, element type, id, class, or any combination thereof. The order of the selectors is important. For example, <code class="mw-highlight" id="" style="" dir="ltr"><span class="nt">div</span> <span class="p">.</span><span class="nc">myClass</span> <span class="p">{</span><span class="k">color</span><span class="p">:</span> <span class="kc">red</span><span class="p">;}</span></code> applies to all elements of class myClass that are inside div elements, whereas <code class="mw-highlight" id="" style="" dir="ltr"><span class="p">.</span><span class="nc">myClass</span> <span class="nt">div</span> <span class="p">{</span><span class="k">color</span><span class="p">:</span> <span class="kc">red</span><span class="p">;}</span></code> applies to all div elements that are in elements of class myClass.</p>
+            <p>The following table provides a summary of selector syntax indicating usage and the version of CSS that introduced it.<sup id="cite_ref-7" class="reference"><a href="#cite_note-7">[7]</a></sup></p>
+            <table class="wikitable">
+                <tr>
+                    <th>Pattern</th>
+                    <th>Matches</th>
+                    <th>
+                        First defined<br />
+                        in CSS level
+                    </th>
+                </tr>
+                <tr>
+                    <td>E</td>
+                    <td>an element of type E</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>E:link</td>
+                    <td>an E element is the source anchor of a hyperlink of which the target is not yet visited (:link) or already visited (:visited)</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>E:active</td>
+                    <td>an E element during certain user actions</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>E::first-line</td>
+                    <td>the first formatted line of an E element</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>E::first-letter</td>
+                    <td>the first formatted letter of an E element</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>.c</td>
+                    <td>all elements with class="c"</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>#myid</td>
+                    <td>the element with id="myid"</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>E.warning</td>
+                    <td>an E element whose class is "warning" (the document language specifies how class is determined)</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>E#myid</td>
+                    <td>an E element with ID equal to "myid"</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>E F</td>
+                    <td>an F element descendant of an E element</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>*</td>
+                    <td>any element</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>E[foo]</td>
+                    <td>an E element with a "foo" attribute</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>E[foo="bar"]</td>
+                    <td>an E element whose "foo" attribute value is exactly equal to "bar"</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>E[foo~="bar"]</td>
+                    <td>an E element whose "foo" attribute value is a list of whitespace-separated values, one of which is exactly equal to "bar"</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>E[foo|="en"]</td>
+                    <td>an E element whose "foo" attribute has a hyphen-separated list of values beginning (from the left) with "en"</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>E:first-child</td>
+                    <td>an E element, first child of its parent</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>E:lang(fr)</td>
+                    <td>an element of type E in language "fr" (the document language specifies how language is determined)</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>E::before</td>
+                    <td>generated content before an E element's content</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>E::after</td>
+                    <td>generated content after an E element's content</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>E &gt; F</td>
+                    <td>an F element child of an E element</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>E + F</td>
+                    <td>an F element immediately preceded by an E element</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>E[foo^="bar"]</td>
+                    <td>an E element whose "foo" attribute value begins exactly with the string "bar"</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>E[foo$="bar"]</td>
+                    <td>an E element whose "foo" attribute value ends exactly with the string "bar"</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>E[foo*="bar"]</td>
+                    <td>an E element whose "foo" attribute value contains the substring "bar"</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>E:root</td>
+                    <td>an E element, root of the document</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>E:nth-child(n)</td>
+                    <td>an E element, the n-th child of its parent</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>E:nth-last-child(n)</td>
+                    <td>an E element, the n-th child of its parent, counting from the last one</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>E:nth-of-type(n)</td>
+                    <td>an E element, the n-th sibling of its type</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>E:nth-last-of-type(n)</td>
+                    <td>an E element, the n-th sibling of its type, counting from the last one</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>E:last-child</td>
+                    <td>an E element, last child of its parent</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>E:first-of-type</td>
+                    <td>an E element, first sibling of its type</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>E:last-of-type</td>
+                    <td>an E element, last sibling of its type</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>E:only-child</td>
+                    <td>an E element, only child of its parent</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>E:only-of-type</td>
+                    <td>an E element, only sibling of its type</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>E:empty</td>
+                    <td>an E element that has no children (including text nodes)</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>E:target</td>
+                    <td>an E element being the target of the referring URI</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>E:enabled</td>
+                    <td>a user interface element E that is enabled</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>E:disabled</td>
+                    <td>a user interface element E that is disabled</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>E:checked</td>
+                    <td>a user interface element E that is checked (for instance a radio-button or checkbox)</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>E:not(s)</td>
+                    <td>an E element that does not match simple selector s</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>E ~ F</td>
+                    <td>an F element preceded by an E element</td>
+                    <td>3</td>
+                </tr>
+            </table>
+            <h3><span class="mw-headline" id="Declaration_block">Declaration block</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Cascading_Style_Sheets&amp;action=edit&amp;section=3" title="Edit section: Declaration block">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+            <p>A declaration block consists of a list of <i>declarations</i> in braces. Each declaration itself consists of a <i>property</i>, a colon (<code>:</code>), and a <i>value</i>. If there are multiple declarations in a block, a semi-colon (<code>;</code>) must be inserted to separate each declaration.<sup id="cite_ref-8" class="reference"><a href="#cite_note-8">[8]</a></sup></p>
+            <p>Properties are specified in the CSS standard. Each property has a set of possible values. Some properties can affect any type of element, and others apply only to particular groups of elements.<sup id="cite_ref-9" class="reference"><a href="#cite_note-9">[9]</a></sup></p>
+            <p>Values may be keywords, such as "center" or "inherit", or numerical values, such as 200px (200 pixels), 50vw (50 percent of the viewport width) or 80% (80 percent of the window width). Color values can be specified with keywords (e.g. "red"), hexadecimal values (e.g. #FF0000, also abbreviated as #F00), RGB values on a 0 to 255 scale (e.g. <code class="mw-highlight" id="" style="" dir="ltr"><span class="nt">rgb</span><span class="o">(</span><span class="nt">255</span><span class="o">,</span> <span class="nt">0</span><span class="o">,</span> <span class="nt">0</span><span class="o">)</span></code>), RGBA values that specify both color and alpha transparency (e.g. <code class="mw-highlight" id="" style="" dir="ltr"><span class="nt">rgba</span><span class="o">(</span><span class="nt">255</span><span class="o">,</span> <span class="nt">0</span><span class="o">,</span> <span class="nt">0</span><span class="o">,</span> <span class="nt">0</span><span class="p">.</span><span class="nc">8</span><span class="o">)</span></code>), or HSL or HSLA values (e.g. <code class="mw-highlight" id="" style="" dir="ltr"><span class="nt">hsl</span><span class="o">(</span><span class="nt">000</span><span class="o">,</span> <span class="nt">100</span><span class="o">%,</span> <span class="nt">50</span><span class="o">%)</span></code>, <code class="mw-highlight" id="" style="" dir="ltr"><span class="nt">hsla</span><span class="o">(</span><span class="nt">000</span><span class="o">,</span> <span class="nt">100</span><span class="o">%,</span> <span class="nt">50</span><span class="o">%,</span> <span class="nt">80</span><span class="o">%)</span></code>).<sup id="cite_ref-10" class="reference"><a href="#cite_note-10">[10]</a></sup></p>
+            <h3><span class="mw-headline" id="Use">Use</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Cascading_Style_Sheets&amp;action=edit&amp;section=4" title="Edit section: Use">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+            <p>Before CSS, nearly all presentational attributes of HTML documents were contained within the HTML markup. All font colors, background styles, element alignments, borders and sizes had to be explicitly described, often repeatedly, within the HTML. CSS lets authors move much of that information to another file, the style sheet, resulting in considerably simpler HTML.</p>
+            <p>For example, headings (<code>h1</code> elements), sub-headings (<code>h2</code>), sub-sub-headings (<code>h3</code>), etc., are defined structurally using HTML. In print and on the screen, choice of <a href="/wiki/Typeface" title="Typeface">font</a>, <a href="/wiki/Point_(typography)" title="Point (typography)">size</a>, <a href="/wiki/Color" title="Color">color</a> and <a href="/wiki/Emphasis_(typography)" title="Emphasis (typography)">emphasis</a> for these elements is <i>presentational</i>.</p>
+            <p>Before CSS, document authors who wanted to assign such <a href="/wiki/Typography" title="Typography">typographic</a> characteristics to, say, all <code>h2</code> headings had to repeat HTML presentational markup for each occurrence of that heading type. This made documents more complex, larger, and more error-prone and difficult to maintain. CSS allows the separation of presentation from structure. CSS can define color, font, text alignment, size, borders, spacing, layout and many other typographic characteristics, and can do so independently for on-screen and printed views. CSS also defines non-visual styles, such as reading speed and emphasis for aural text readers. The <a href="/wiki/W3C" class="mw-redirect" title="W3C">W3C</a> has now <a href="/wiki/Deprecation" title="Deprecation">deprecated</a> the use of all presentational HTML markup.<sup id="cite_ref-11" class="reference"><a href="#cite_note-11">[11]</a></sup></p>
+            <h3><span class="mw-headline" id="Sources">Sources</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Cascading_Style_Sheets&amp;action=edit&amp;section=5" title="Edit section: Sources">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+            <p>CSS information can be provided from various sources. These sources can be the web browser, the user and the author. The information from the author can be further classified into inline, media type, importance, selector specificity, rule order, inheritance and property definition. CSS style information can be in a separate document or it can be embedded into an HTML document. Multiple style sheets can be imported. Different styles can be applied depending on the output device being used; for example, the screen version can be quite different from the printed version, so that authors can tailor the presentation appropriately for each medium.</p>
+            <p>The style sheet with the highest priority controls the content display. Declarations not set in the highest priority source are passed on to a source of lower priority, such as the user agent style. This process is called <i>cascading</i>.</p>
+            <p>One of the goals of CSS is to allow users greater control over presentation. Someone who finds red italic headings difficult to read may apply a different style sheet. Depending on the browser and the web site, a user may choose from various style sheets provided by the designers, or may remove all added styles and view the site using the browser's default styling, or may override just the red italic heading style without altering other attributes.</p>
+            <table class="wikitable">
+                <caption>CSS priority scheme (highest to lowest)</caption>
+                <tr>
+                    <th>Priority</th>
+                    <th>CSS source type</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Importance</td>
+                    <td>The ‘<code class="mw-highlight" id="" style="" dir="ltr"><span class="o">!</span><span class="nt">important</span></code>’ annotation overwrites the previous priority types</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Inline</td>
+                    <td>A style applied to an HTML element via HTML ‘style’ attribute</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Media Type</td>
+                    <td>A property definition applies to all media types, unless a media specific CSS is defined</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>User defined</td>
+                    <td>Most browsers have the accessibility feature: a user defined CSS</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Selector specificity</td>
+                    <td>A specific contextual selector (<code class="mw-highlight" id="" style="" dir="ltr"><span class="p">#</span><span class="nn">heading</span> <span class="nt">p</span></code>) overwrites generic definition</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>Rule order</td>
+                    <td>Last rule declaration has a higher priority</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>Parent inheritance</td>
+                    <td>If a property is not specified, it is inherited from a parent element</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>CSS property definition in HTML document</td>
+                    <td>CSS rule or CSS inline style overwrites a default browser value</td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>Browser default</td>
+                    <td>The lowest priority: browser default value is determined by W3C initial value specifications</td>
+                </tr>
+            </table>
+            <h3><span class="mw-headline" id="Specificity">Specificity</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Cascading_Style_Sheets&amp;action=edit&amp;section=6" title="Edit section: Specificity">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+            <p><i>Specificity</i> refers to the relative weights of various rules.<sup id="cite_ref-Cascading_12-0" class="reference"><a href="#cite_note-Cascading-12">[12]</a></sup> It determines which styles apply to an element when more than one rule could apply. Based on specification, a simple selector (e.g. H1) has a specificity of 1, class selectors have a specificity of 1,0, and ID selectors a specificity of 1,0,0. Because the specificity values do not carry over as in the decimal system, commas are used to separate the "digits"<sup id="cite_ref-13" class="reference"><a href="#cite_note-13">[13]</a></sup> (a CSS rule having 11 elements and 11 classes would have a specificity of 11,11, not 121).</p>
+            <p>Thus the following rules selectors result in the indicated specificity:</p>
+            <table class="wikitable">
+                <tr>
+                    <th>Selectors</th>
+                    <th>Specificity</th>
+                </tr>
+                <tr>
+                    <td>H1 {color: white;}</td>
+                    <td>0, 0, 0, 1</td>
+                </tr>
+                <tr>
+                    <td>P EM {color: green;}</td>
+                    <td>0, 0, 0, 2</td>
+                </tr>
+                <tr>
+                    <td>.grape {color: red;}</td>
+                    <td>0, 0, 1, 0</td>
+                </tr>
+                <tr>
+                    <td>P.bright {color: blue;}</td>
+                    <td>0, 0, 1, 1</td>
+                </tr>
+                <tr>
+                    <td>P.bright EM.dark {color: yellow;}</td>
+                    <td>0, 0, 2, 2</td>
+                </tr>
+                <tr>
+                    <td>#id218 {color: brown;}</td>
+                    <td>0, 1, 0, 0</td>
+                </tr>
+                <tr>
+                    <td>style=" "</td>
+                    <td>1, 0, 0, 0</td>
+                </tr>
+            </table>
+            <h4><span class="mw-headline" id="Example">Example</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Cascading_Style_Sheets&amp;action=edit&amp;section=7" title="Edit section: Example">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+            <p>Consider this HTML fragment:</p>
+            <div class="mw-highlight mw-content-ltr" dir="ltr">
+<pre>
+<span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">"utf-8"</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+                <span class="p">#</span><span class="nn">xyz</span> <span class="p">{</span> <span class="k">color</span><span class="p">:</span> <span class="kc">blue</span><span class="p">;</span> <span class="p">}</span>
+                <span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+                <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">p</span> <span class="na">id</span><span class="o">=</span><span class="s">"xyz"</span> <span class="na">style</span><span class="o">=</span><span class="s">"color: blue;"</span><span class="p">&gt;</span> To demonstrate specificity <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+                <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre>
+            </div>
+            <p>In the above example, the declaration in the <code>style</code> attribute overrides the one in the <code>&lt;style&gt;</code> element because it has a higher specificity.</p>
+            <h3><span class="mw-headline" id="Inheritance">Inheritance</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Cascading_Style_Sheets&amp;action=edit&amp;section=8" title="Edit section: Inheritance">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+            <p>Inheritance is a key feature in CSS; it relies on the ancestor-descendant relationship to operate. Inheritance is the mechanism by which properties are applied not only to a specified element, but also to its descendants.<sup id="cite_ref-Cascading_12-1" class="reference"><a href="#cite_note-Cascading-12">[12]</a></sup> Inheritance relies on the document tree, which is the hierarchy of <a href="/wiki/XHTML" title="XHTML">XHTML</a> elements in a page based on nesting. Descendant elements may inherit CSS property values from any ancestor element enclosing them. In general, descendant elements inherit text-related properties, but box-related properties are not inherited. Properties that can be inherited are color, font, letter-spacing, line-height, list-style, text-align, text-indent, text-transform, visibility, white-space and word-spacing. Properties that cannot be inherited are background, border, display, float and clear, height, and width, margin, min- and max-height and -width, outline, overflow, padding, position, text-decoration, vertical-align and z-index.</p>
+            <p>Inheritance can be used to avoid declaring certain properties over and over again in a style sheet, allowing for shorter CSS.</p>
+            <p>Inheritance in CSS is not the same as <a href="/wiki/Class-based_programming#Inheritance" title="Class-based programming">inheritance in class-based programming languages</a>, where it is possible to define class B as "like class A, but with modifications".<sup id="cite_ref-14" class="reference"><a href="#cite_note-14">[14]</a></sup> With CSS, it is possible to style an <i>element</i> with "class A, but with modifications". However, it is not possible to define a CSS <i>class</i> B like that, which could then be used to style multiple elements without having to repeat the modifications.</p>
+            <h4><span class="mw-headline" id="Example_2">Example</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Cascading_Style_Sheets&amp;action=edit&amp;section=9" title="Edit section: Example">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+            <p>Given the following style sheet:</p>
+            <div class="mw-highlight mw-content-ltr" dir="ltr">
+<pre>
+<span class="nt">h1</span> <span class="p">{</span>
+                <span class="k">color</span><span class="p">:</span> <span class="kc">pink</span><span class="p">;</span>
+<span class="p">}</span>
+</pre>
+            </div>
+            <p>Suppose there is an h1 element with an emphasizing element (em) inside:</p>
+            <div class="mw-highlight mw-content-ltr" dir="ltr">
+<pre>
+<span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>
+   This is to <span class="p">&lt;</span><span class="nt">em</span><span class="p">&gt;</span>illustrate<span class="p">&lt;/</span><span class="nt">em</span><span class="p">&gt;</span> inheritance
+<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+</pre>
+            </div>
+            <p>If no color is assigned to the em element, the emphasized word "illustrate" inherits the color of the parent element, h1. The style sheet h1 has the color pink, hence, the em element is likewise pink.</p>
+            <h3><span class="mw-headline" id="Whitespace">Whitespace</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Cascading_Style_Sheets&amp;action=edit&amp;section=10" title="Edit section: Whitespace">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+            <p>Whitespace between properties and selectors is ignored. This code snippet:</p>
+            <div class="mw-highlight mw-content-ltr" dir="ltr">
+<pre>
+<span class="nt">body</span><span class="p">{</span><span class="k">overflow</span><span class="p">:</span><span class="kc">hidden</span><span class="p">;</span><span class="k">background</span><span class="p">:</span><span class="mh">#000000</span><span class="p">;}</span>
+</pre>
+            </div>
+            <p>is functionally equivalent to this one:</p>
+            <div class="mw-highlight mw-content-ltr" dir="ltr">
+<pre>
+<span class="nt">body</span> <span class="p">{</span>
+                <span class="k">overflow</span><span class="p">:</span> <span class="kc">hidden</span><span class="p">;</span>
+                <span class="k">background</span><span class="p">:</span> <span class="mh">#000000</span><span class="p">;</span>
+<span class="p">}</span>
+</pre>
+            </div>
+            <p>One common way to format CSS for readability is to indent each property and give it its own line.</p>
+            <h3><span class="mw-headline" id="Positioning">Positioning</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Cascading_Style_Sheets&amp;action=edit&amp;section=11" title="Edit section: Positioning">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+            <p>CSS&#160;2.1 defines three positioning schemes:</p>
+            <dl>
+                <dt>Normal flow</dt>
+                <dd><i>Inline</i> items are laid out in the same way as the letters in words in text, one after the other across the available space until there is no more room, then starting a new line below. <i>Block</i> items stack vertically, like paragraphs and like the items in a bulleted list. Normal flow also includes relative positioning of block or inline items, and run-in boxes.</dd>
+                <dt>Floats</dt>
+                <dd>A floated item is taken out of the normal flow and shifted to the left or right as far as possible in the space available. Other content then flows alongside the floated item.</dd>
+                <dt>Absolute positioning</dt>
+                <dd>An absolutely positioned item has no place in, and no effect on, the normal flow of other items. It occupies its assigned position in its container independently of other items.<sup id="cite_ref-W3C-positioning_15-0" class="reference"><a href="#cite_note-W3C-positioning-15">[15]</a></sup></dd>
+            </dl>
+            <h4><span class="mw-headline" id="Position_property">Position property</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Cascading_Style_Sheets&amp;action=edit&amp;section=12" title="Edit section: Position property">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+            <p>There are four possible values of the <code>position</code> property. If an item is positioned in any way other than <code>static</code>, then the further properties <code>top</code>, <code>bottom</code>, <code>left</code>, and <code>right</code> are used to specify offsets and positions.</p>
+            <dl>
+                <dt>Static</dt>
+                <dd>The default value places the item in the <i>normal flow</i></dd>
+                <dt>Relative</dt>
+                <dd>The item is placed in the <i>normal flow</i>, and then shifted or offset from that position. Subsequent flow items are laid out as if the item had not been moved.</dd>
+                <dt>Absolute</dt>
+                <dd>Specifies <i>absolute positioning</i>. The element is positioned in relation to its nearest non-static ancestor.</dd>
+                <dt>Fixed</dt>
+                <dd>The item is <i>absolutely positioned</i> in a fixed position on the screen even as the rest of the document is scrolled<sup id="cite_ref-W3C-positioning_15-1" class="reference"><a href="#cite_note-W3C-positioning-15">[15]</a></sup></dd>
+            </dl>
+            <h4><span class="mw-headline" id="Float_and_clear">Float and clear</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Cascading_Style_Sheets&amp;action=edit&amp;section=13" title="Edit section: Float and clear">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+            <p>The <code>float</code> property may have one of three values. <i>Absolutely</i> positioned or <i>fixed</i> items cannot be floated. Other elements normally flow around floated items, unless they are prevented from doing so by their <code>clear</code> property.</p>
+            <dl>
+                <dt>left</dt>
+                <dd>The item <i>floats</i> to the left of the line that it would have appeared in; other items may flow around its right side.</dd>
+                <dt>right</dt>
+                <dd>The item <i>floats</i> to the right of the line that it would have appeared in; other items may flow around its left side.</dd>
+                <dt>clear</dt>
+                <dd>Forces the element to appear underneath ('clear') floated elements to the left (<code class="mw-highlight" id="" style="" dir="ltr"><span class="nt">clear</span><span class="p">:</span><span class="nd">left</span></code>), right (<code class="mw-highlight" id="" style="" dir="ltr"><span class="nt">clear</span><span class="p">:</span><span class="nd">right</span></code>) or both sides (<code class="mw-highlight" id="" style="" dir="ltr"><span class="nt">clear</span><span class="p">:</span><span class="nd">both</span></code>).<sup id="cite_ref-W3C-positioning_15-2" class="reference"><a href="#cite_note-W3C-positioning-15">[15]</a></sup><sup id="cite_ref-16" class="reference"><a href="#cite_note-16">[16]</a></sup></dd>
+            </dl>
+
+
+
+        </div>
+
+    </div>
+    <!-- start: Footer -->
+    <div id="footer">
+
+        <!-- start: Container -->
+        <div class="container">
+
+            <!-- start: Row -->
+            <div class="row">
+                <!-- start: About -->
+                <div class="col-sm-3">
+
+                    <h3>About us</h3>
+                    <p>Faculty of Information Technology (IT) - Da Lat University was established in July 2003 with 5 full-time teachers, more than 70 students studying. Over the years, the Faculty has constantly developed and grown into one of the important faculties of the University of Dalat.</p>
+
+                </div>
+                <!-- end: About -->
+                <!-- start: Photo Stream -->
+                <div class="col-sm-3">
+
+                    <h3>Study</h3>
+                    <div class="flickr-widget">
+                        <a href="#" onclick="Building()"><img src="../img/IconTest/iconpack/cpp.png" title="CPP" /></a>
+                        <a href="#" onclick="Building()"><img src="../img/IconTest/iconpack/Csharp.png" title="C#" /></a>
+                        <a href="#" onclick="Building()"><img src="../img/IconTest/iconpack/CSS.png" title="CSS" /></a>
+                        <a href="#" onclick="Building()"><img src="../img/IconTest/iconpack/html.png" title="HTML" /></a>
+                        <a href="#" onclick="Building()"><img src="../img/IconTest/iconpack/JAVA.png" title="JAVA" /></a>
+                        <a href="#" onclick="Building()"><img src="../img/IconTest/iconpack/pYTHON.png" title="PYTHON" /></a>
+                        <a href="#" onclick="Building()"><img src="../img/IconTest/iconpack/ASSEMBLY.png" title="ASSEMBLY" /></a>
+                        <div class="clear"></div>
+                    </div>
+
+                </div>
+                <!-- end: Photo Stream -->
+                <div class="col-sm-6">
+
+                    <!-- start: Follow Us -->
+                    <h3>Follow Us!</h3>
+                    <ul class="Social">
+                        <li>
+                            <a href="#" onclick="Building()"><img src="../img/icons/social/twitter.png" /></a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="Building()"><img src="../img/icons/social/facebook.png" /></a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="Building()"><img src="../img/icons/social/vimeo.png" /></a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="Building()"><img src="../img/icons/social/tumblr.png" /></a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="Building()"><img src="../img/icons/social/yahoo.png" /></a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="Building()"><img src="../img/icons/social/amazon.png" /></a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="Building()"><img src="../img/icons/social/blogger.png" /></a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="Building()"><img src="../img/icons/social/googleplus.png" /></a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="Building()"><img src="../img/icons/social/github.png" /></a>
+                        </li>
+
+
+                    </ul>
+                    <br />
+                    <br />
+                    <!-- end: Follow Us -->
+                    <!-- start: Contact-->
+                    <h3>Contact</h3>
+                    <h4>Please leave us your email</h4>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <input type="text" placeholder="Enter your mail">
+                            <input type="button" value="Submit!">
+                        </div>
+                    </div>
+
+                    <!-- end: Contact -->
+
+                </div>
+
+            </div>
+            <!-- end: Row -->
+
+        </div>
+        <!-- end: Container  -->
+    </div>
+    <!-- start: Copyright -->
+    <div class="Slogan"></div>
+    <div id="copyright">
+        <!-- start: Container -->
+        <div class="container">
+
+            <div class="col-sm-12">
+                <p>
+                    &copy; 2017 Theme design by  1510289 <img src="../img/poland2.png" alt="Poland" style="margin-top:-4px"> <a href="http://cntt.dlu.edu.vn" alt="ITDLU" target="_blank">DaLat University</a> .
+                </p>
+                <p>
+                    &spades; Reference source from <a href="http://bootstrapmaster.com">BootstrapMaster</a> &spades;
+                </p>
+            </div>
+
+        </div>
+        <!-- end: Container  -->
+
+    </div>
+    <!--Start: Login area ( Default: Hidden)-->
+    <div id="id01" class="modal_2">
+
+        <form class="modal_2-content animate">
+            <div class="imgcontainer">
+                <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                <img src="../img/anhThe/images_Login.png" alt="Avatar" class="avatar">
+            </div>
+
+            <div class="container1">
+                <table>
+                    <tr>
+                        <td>
+                            <label><b>Username :</b></label>
+                            <input type="text" placeholder="Enter your username" id="UserLG" onfocus="CheckLG('UserLG')" onchange="CheckLG('UserLG')" />
+                        </td>
+                        <td id="KiemTra">
+                            <h4 id="CheckUserLogin"></h4>
+                        </td>
+
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label><b>Password :</b></label>
+                            <input type="password" placeholder="Enter your password" id="PassLG" onfocus="CheckLG('PassLG')" onchange="CheckLG('PassLG')" />
+                        </td>
+                        <td id="KiemTra">
+                            <h4 id="CheckPassLogin"></h4>
+                        </td>
+                    </tr>
+
+                </table>
+
+
+                <button type="button" onclick="Login()">Login</button>
+                <input type="checkbox" checked="checked" name="Remember"> Remember me
+            </div>
+
+            <div class="container1" style="background-color:#f1f1f1;border-radius: 0px 0px 25px 25px;">
+                <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                <span class="psw"><a href="#">Forgot password?</a></span>
+            </div>
+        </form>
+    </div>
+
+
+
+    <!-- End: Login area ( Default: Hidden)-->
+    <!--Start: Reg area ( Default: Hidden)-->
+    <div id="id02" class="modal_2">
+
+        <form class="modal_2-content animate">
+            <div class="imgcontainer">
+
+                <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+                <img src="../img/anhThe/images_Login.png" alt="Avatar" class="avatar">
+            </div>
+
+            <div class="container1">
+                <table>
+                    <tr>
+                        <td>
+                            <label><b>Username :</b></label>
+                            <input type="text" placeholder="Enter your username" id="UserDK" onfocus="Check()" onchange="Check()" />
+                        </td>
+                        <td id="KiemTra">
+                            <h4 id="CheckUser"></h4>
+                        </td>
+
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label><b>Password :</b></label>
+                            <input type="password" placeholder="Enter your password" id="PassDK" onfocus="Check()" onchange="Check()" />
+                        </td>
+                        <td id="KiemTra">
+                            <h4 id="CheckPass"></h4>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label><b>Email :</b></label>
+                            <input type="text" placeholder="Enter your email" id="MailDK" onfocus="Check()" onchange="Check()" required>
+                        </td>
+                        <td id="KiemTra">
+                            <h4 id="CheckMail"></h4>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label><b>Birthday :</b></label>
+                            <input type="text" placeholder="Enter your birth day" id="NSinhDK" onfocus="Check()" onchange="Check()" required>
+                        </td>
+                        <td id="KiemTra">
+                            <h4 id="CheckDate"></h4>
+                        </td>
+
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label><b>Phone :</b></label>
+                            <input type="text" placeholder="Enter your phone" id="PhoneDK" onfocus="Check()" onchange="Check()">
+                        </td>
+                        <td id="KiemTra">
+                            <h4 id="CheckPhone"></h4>
+                        </td>
+                    </tr>
+
+
+                </table>
+
+                <button type="button" onclick="DK()">Register</button>
+            </div>
+
+            <div class="container1" style="background-color:#f1f1f1;border-radius: 0px 0px 25px 25px;">
+                <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+                <span class="psw"> You have a account ?<a href="#" onclick="ChuyenSangDN()">Click here</a></span>
+            </div>
+        </form>
+    </div>
+
+    <div id="id03" class="modal_2">
+
+        <div class="modal_2-content animate">
+
+            <table cellpadding="0" cellspacing="1" style="font-size:190%;">
+
+                <tr>
+                    <th colspan="2" style="text-align:center"><h1 style="color:red">Sign-up Success !!!</h1></th>
+
+                </tr>
+                <tr>
+
+                    <td>&nbsp; Name : </td>
+                    <td><h2 id="TenNhap"></h2></td>
+                </tr>
+
+                <tr>
+                    <td>&nbsp; Pass :</td>
+                    <td><h3 id="MKNhap"></h3></td>
+                </tr>
+
+
+                <tr>
+                    <td>&nbsp; Birthday : </td>
+                    <td><h3 id="NSNhap"></h3></td>
+                </tr>
+
+                <tr>
+                    <td>&nbsp; Email :</td>
+                    <td><h3 id="MailNhap"></h3></td>
+                </tr>
+
+                <tr>
+                    <td>&nbsp; Phone : </td>
+                    <td><h3 id="SDTNhap"></h3></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input style="float:right" type="button" value="Close" onclick="document.getElementById('id03').style.display='none'" />
+                    </td>
+
+                </tr>
+
+
+            </table>
+        </div>
+    </div>
+
+
+    <!-- End: Reg area ( Default: Hidden)-->
+    <!-- end: Copyright -->
+    <!-- start: Java Script -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../js/jquery-1.9.1.min.js"></script>
+    <script src="../js/flexslider.js"></script>
+    <script src="../js/carousel.js"></script>
+    <script src="../js/jquery.cslider.js"></script>
+    <script src="../js/slider.js"></script>
+    <script src="../js/custom.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- end: Java Script -->
+
+</body>
+</html>

@@ -1,0 +1,350 @@
+﻿body {
+    padding: 0;
+    margin: 0 auto;
+    font-family: Tahoma;
+}
+
+
+@font-face {
+    font-family: 'RokkittRegular';
+    src: url('../fonts/rokkitt-regular-webfont.eot');
+    src: url('../fonts/rokkitt-regular-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/rokkitt-regular-webfont.woff') format('woff'), url('../fonts/rokkitt-regular-webfont.ttf') format('truetype'), url('../fonts/rokkitt-regular-webfont.svg#RokkittRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+div {
+    float: left;
+}
+
+.Header {
+    width: 100%;
+    height: 110px;
+    background: url(images/bg-header.gif) repeat center center;
+    display: flex;
+}
+
+    .Header #SubHeader {
+        margin: 10px auto;
+        width: 1080px;
+        height: 90px;
+    }
+
+        .Header #SubHeader #logo {
+            float: left;
+            margin: 0 0 0 0;
+            width: 20%;
+            height: 100%;
+            background: url(images/logo.gif) no-repeat center center;
+        }
+
+        .Header #SubHeader #MenuLab07 {
+            margin: 20px auto;
+            float: right;
+            width: 400px;
+            height: 60px;
+            font-weight: bold;
+        }
+
+            .Header #SubHeader #MenuLab07 ul {
+                list-style: none;
+                font-weight: normal;
+            }
+
+                .Header #SubHeader #MenuLab07 ul li {
+                    display: inline;
+                }
+
+                    .Header #SubHeader #MenuLab07 ul li a {
+                        text-decoration: none;
+                    }
+
+.Banner {
+    height: 550px;
+    margin-top: -8px;
+    width: 100%;
+    background: url(images/bg-content.gif) repeat-x;
+    display: flex;
+}
+
+    .Banner #SubBaner1 {
+        margin: 0 auto;
+        width: 980px;
+        height: 505px;
+        background: url(images/flowerwheel.jpg) no-repeat center center;
+        background-size: 100% 100%;
+    }
+
+        .Banner #SubBaner1 #ContentBaner {
+            width: 400px;
+            height: 440px;
+            /*border: 1px solid red;*/
+            display: flex;
+        }
+
+            .Banner #SubBaner1 #ContentBaner #SubContentBaner {
+                width: 330px;
+                height: 400px;
+                /*border: 1px solid green;*/
+                margin: 15px auto;
+            }
+
+                .Banner #SubBaner1 #ContentBaner #SubContentBaner #Title07 {
+                    margin: 20px auto;
+                    background: url(images/Ngoac.png) no-repeat;
+                    background-size: 330px 95px;
+                    height: 85px;
+                    width: 330px;
+                    text-align: center;
+                }
+
+                    .Banner #SubBaner1 #ContentBaner #SubContentBaner #Title07 h1 {
+                        color: white;
+                        height: 50px;
+                        width: 310px;
+                        text-shadow: 0px 12px 2px #9ec7e5;
+                        font-size: 25px;
+                        margin: 10px 0 0 15px;
+                        text-align: center;
+                        font-weight: normal;
+                        font-family: RokkittRegular;
+                    }
+
+                .Banner #SubBaner1 #ContentBaner #SubContentBaner #Content07 {
+                    height: 200px;
+                    text-align: justify;
+                    line-height: 20px;
+                    word-spacing: 1px;
+                    text-shadow: 0 1px 0px #d6f0ff;
+                    width: 330px;
+                    font-size: 16px;
+                    color: #31607e;
+                    font-family: arial;
+                }
+
+                .Banner #SubBaner1 #ContentBaner #SubContentBaner #Button007 {
+                    margin: 0 0 0 0px;
+                    width: 330px;
+                    height: 60px;
+                    background: url(images/button.png) no-repeat;
+                    background-size: 330px auto;
+                }
+
+                    .Banner #SubBaner1 #ContentBaner #SubContentBaner #Button007 a {
+                        float: left;
+                        font-family: 'RokkittRegular';
+                        color: #32617f;
+                        font-size: 20px;
+                        font-weight: bold;
+                        text-decoration: none;
+                        margin: 20px 0 0 50px;
+                    }
+
+.Future {
+    margin-top: -45px;
+    height: 550px;
+    width: 100%;
+    background: url(images/bg-content2.gif) repeat;
+    display: flex;
+}
+
+    .Future #SubFuture {
+        margin: 50px auto;
+        width: 1080px;
+        height: 600px;
+    }
+
+        .Future #SubFuture #Cot1FU, #Cot2FU, #Cot3FU {
+            float: left;
+            margin: 1% 0 0 50px;
+            width: 290px;
+            height: 500px;
+        }
+
+        .Future #SubFuture a {
+            float: left;
+            width: 290px;
+            height: 50px;
+            margin: 0 0 0 90px;
+        }
+
+        .Future #SubFuture h4 {
+            float: left;
+            margin: 50px 0 0 65px;
+            text-align: center;
+        }
+
+        .Future #SubFuture p {
+            float: left;
+            width: 290px;
+            text-align: justify;
+            color: #828081;
+            font-family: arial;
+            line-height: 21px;
+            font-size: 13px;
+            background: none;
+            padding: 0;
+            word-spacing: 3px;
+            margin: 30px auto;
+        }
+
+        .Future #SubFuture #ButtonFU {
+            margin: 0 0 0 50px;
+            float: left;
+            width: 180px;
+            height: 120px;
+            background: url(images/bg-readmore.gif) no-repeat;
+            background-size: 180px auto;
+        }
+
+            .Future #SubFuture #ButtonFU a {
+                text-decoration: none;
+                text-align: center;
+                width: 180px;
+                margin: 10px auto;
+                font-size: 20px;
+                font-weight: bold;
+                color: blue;
+                text-shadow: 0px 0px 6px #6CB2E6;
+            }
+
+                .Future #SubFuture #ButtonFU a:hover {
+                    color: #6CB2E6;
+                }
+
+.Footer07 {
+    height: 450px;
+    width: 100%;
+    background: url(images/bg-footer.gif) repeat;
+}
+
+    .Footer07 #SubFooter {
+        width: 100%;
+        height: 450px;
+        background: url(images/Capture.PNG) repeat;
+        /*opacity: 0.45;*/
+        display: flex;
+    }
+
+        .Footer07 #SubFooter #FilterFooter {
+            float: left;
+            margin: 0 auto;
+            width: 1080px;
+            height: 450px;
+            /*border: 1px solid black;*/
+        }
+
+            .Footer07 #SubFooter #FilterFooter #SubFilterFooter {
+                width: 1080px;
+                margin: 80px auto;
+                height: 300px;
+                /*border: 1px solid red;*/
+            }
+
+                .Footer07 #SubFooter #FilterFooter #SubFilterFooter #CopyRight {
+                    text-align: center;
+                    text-shadow: 0 1px 0 #99abb9;
+                    color: #3e505c;
+                    clear: both;
+                    margin: -130px 0 0 380px;
+                    float: left;
+                    width: auto;
+                    font-size: 13px;
+                    font-family: trebuchet MS;
+                    font-weight: bold;
+                }
+
+                .Footer07 #SubFooter #FilterFooter #SubFilterFooter #MenuArea {
+                    width: 200px;
+                    margin: -5px 0 0 0;
+                    height: 300px;
+                    /*border: 1px solid yellow;*/
+                }
+
+                    .Footer07 #SubFooter #FilterFooter #SubFilterFooter #MenuArea ul li a {
+                        color: #d5ebf8;
+                        font-size: 22px;
+                        font-family: 'RokkittRegular';
+                        text-decoration: none;
+                        outline: none;
+                    }
+
+                .Footer07 #SubFooter #FilterFooter #SubFilterFooter #ContentArea {
+                    width: 620px;
+                    margin: 0 0 0 0;
+                    height: 300px;
+                    /*border: 1px solid green;*/
+                }
+
+                    .Footer07 #SubFooter #FilterFooter #SubFilterFooter #ContentArea p {
+                        color: #22323f;
+                        font-size: 16px;
+                        font-family: arial;
+                        float: left;
+                        text-align: justify;
+                        text-shadow: 0 1px 0 #99abb9;
+                        line-height: 21px;
+                    }
+
+                .Footer07 #SubFooter #FilterFooter #SubFilterFooter #ContactArea {
+                    width: 220px;
+                    margin: -5px 0 0 40px;
+                    height: 350px;
+                    /*border: 1px solid #ffffff;*/
+                }
+
+                    .Footer07 #SubFooter #FilterFooter #SubFilterFooter #ContactArea ul {
+                        line-height: 35px;
+                        list-style: none;
+                        margin-left: -10px;
+                    }
+
+                    .Footer07 #SubFooter #FilterFooter #SubFilterFooter #ContactArea li {
+                    }
+
+                        .Footer07 #SubFooter #FilterFooter #SubFilterFooter #ContactArea li h4 {
+                            float: right;
+                            margin: 15px auto;
+                        }
+
+                    .Footer07 #SubFooter #FilterFooter #SubFilterFooter #ContactArea ul li a {
+                        color: #d5ebf8;
+                        font-size: 18px;
+                        font-family: 'RokkittRegular';
+                        text-decoration: none;
+                        float: left;
+                        /*border: 2px solid white;*/
+                        width: 100px;
+                        height: 50px;
+                        margin-top: 2px;
+                        display: block;
+                        padding: 0 0 0 80px;
+                        margin-bottom: 25px;
+                    }
+
+#facebook {
+    display: block;
+    background: url(images/icons.gif) no-repeat 0 -75px;
+    background-size: 60px;
+    line-height: 25px;
+    padding: 0 0 0 80px;
+    margin-bottom: 25px;
+}
+
+#vimeo {
+    display: block;
+    background: url(images/icons.gif) no-repeat 0 2px;
+    background-size: 60px;
+    line-height: 25px;
+    padding: 0 0 0 80px;
+    margin-bottom: 25px;
+}
+
+#twitter {
+    display: block;
+    background: url(images/icons.gif) no-repeat 0 -157px;
+    background-size: 60px;
+    line-height: 25px;
+    padding: 0 0 0 80px;
+    margin-bottom: 25px;
+}

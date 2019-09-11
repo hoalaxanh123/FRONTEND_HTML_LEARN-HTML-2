@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Kiem Tra Du Lieu Dau Vao</title>
+	<meta charset="utf-8" />
+    <style>
+      form
+      {   margin:0px 0  0 35%;
+          width:350px;
+          height:300px;
+      }
+      form[name="Test"]
+      {
+          margin-top:-250px;
+      }
+      form[name="form"]
+      {
+         
+          margin:0px 0  0 45%;
+      }
+      input[type='text'],input[type='password'],input[type='number']{
+          float:right;
+      }
+      span{
+          float:left;
+          margin-top:12px;
+      }
+     input{
+          margin-top:10px;
+      }
+      input[type="submit"]{
+          margin-top:20px;
+          margin-left:150px;    
+      }
+      .snowflake {
+            position: fixed;
+            color: #000000;
+        }
+    </style>
+</head>
+<body >
+    <script>
+        function Check()
+        {
+            var ID, PW, SV;
+            ID = Number(document.forms["Test"]["PW"].value);
+            PW = Number(document.forms["Test"]["ID"].value);
+            SV = Number(document.forms["Test"]["SV"].value);
+
+
+            if (0<=SV && SV <= 10)
+            {
+                if (ID == 123 && PW == 123)
+                {
+
+                    alert("Login success with ID : "+ID);
+                    return true;
+
+                }
+                else
+                {
+                    alert("Wrong ID,password or sever");
+                    return false;
+                }
+            }
+            else
+            {
+                alert("Wrong ID,password or sever");
+                return false;
+
+            }
+        }
+    </script>
+    
+    <script src="snow.js"></script>
+    <p class="snowflake" id="snowFlakeContainer"><img src="1.png" alt=""></p>
+    <script language="javascript" src="clock.js" ></script>
+    <form name="Test"  onsubmit="Check()">
+       <span>Enter your ID (123):</span> 
+        <input type="text" name="ID" value="" required />
+        <br />
+       <span >Enter your pass(123):</span>
+        <input type="password" name="PW"  value="" required/>
+        <br />
+        <span>Choose your Server (0-10):</span>
+        <input type="number" name="SV" value=""  required/>
+        <br />
+        <input type="submit" name="sub" value="Login"/>
+      
+    </form>
+
+</body>
+</html>

@@ -1,0 +1,853 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+          "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+
+    <!-- start: Meta -->
+    <title>1510289</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="shortcut icon" href="../img/Images/fav.ico" />
+    <!--Thiết lập định dạng xem trên điện thoại-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- end: Mobile Specific -->
+    <!-- start: CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/style.min.css" rel="stylesheet">
+    <link href="../css/parallax-slider.css" rel="stylesheet">
+    <!-- end: CSS -->
+
+</head>
+<body id="NonBackground">
+
+    <script>
+        var checkUserLG = 0, checkPassLG = 0;
+        function CheckLG(Item) {
+
+            var UserLG, PassLG;
+            UserLG = String(document.getElementById("UserLG").value);
+            PassLG = String(document.getElementById("PassLG").value);
+
+            switch (Item) {
+                case "UserLG":
+                    if (UserLG.length >= 10) {
+                        document.getElementById("CheckUserLogin").innerHTML = "<img src='../img/IconTest/ok.png' alt='OK'/>";
+                        checkUserLG = 1;
+                    }
+                    else {
+                        document.getElementById("CheckUserLogin").innerHTML = "<img src='../img/IconTest/error.png' title='Tên đăng nhập ít nhất 10 ký tự'/>";
+                        checkUserLG = 0;
+                    }
+                    break;
+                case "PassLG":
+                    if (PassLG.length >= 6) {
+                        document.getElementById("CheckPassLogin").innerHTML = "<img src='../img/IconTest/ok.png' alt='OK'/>";
+                        checkPassLG = 1;
+                    }
+                    else {
+                        document.getElementById("CheckPassLogin").innerHTML = "<img src='../img/IconTest/error.png' title='Mật khẩu ít nhất 6 ký tự'/>";
+                        checkPassLG = 0;
+                    }
+                    break;
+
+
+
+            }
+        }
+        function Login() {
+            //Kiem tra co duoc dang nhap khong
+            //alert(checkPassLG);
+            //alert(checkUserLG);
+
+            if (checkPassLG != 1 || checkUserLG != 1) {
+
+                alert("Đăng nhập không thành công -_-!")
+            }
+
+            if (checkPassLG == 1 && checkUserLG == 1) {
+                
+                alert("Đăng nhập  thành công ^_^!");
+                document.getElementById('id01').style.display = 'none';
+
+            }
+
+
+        }
+        function Check() {
+            //alert("OK");
+            var User, Pass, Birthday, Email, SDT;
+            User = String(document.getElementById("UserDK").value);
+            //alert(User);
+            Pass = String(document.getElementById("PassDK").value);
+            //alert(Pass);
+            Birthday = document.getElementById("NSinhDK").value;
+            //alert(Birthday);
+            Email = String(document.getElementById("MailDK").value);
+            //alert(Email);
+            SDT = String(document.getElementById("PhoneDK").value);
+            //alert(SDT);
+            var check1 = 0, check2 = 0, check3 = 0, check4 = 0, check5 = 0;
+            if (User.length >= 10) {
+
+                //document.getElementById("CheckUser").innerHTML = "OK";
+                document.getElementById("CheckUser").innerHTML = "<img src='../img/IconTest/ok.png' alt='OK'/>";
+                document.getElementById("TenNhap").innerHTML = User;
+                check1 = 1;
+            }
+            else {
+                //document.getElementById("CheckUser").innerHTML = "Trường này không được để trống";
+                document.getElementById("CheckUser").innerHTML = "<img src='../img/IconTest/error.png' title='Tên đăng nhập ít nhất 10 ký tự'/>";
+                check1 = 0;
+            }
+            if (Pass.length >= 6) {
+
+                document.getElementById("CheckPass").innerHTML = "OK";
+                document.getElementById("CheckPass").innerHTML = "<img src='../img/IconTest/ok.png' alt='OK'/>";
+                document.getElementById("MKNhap").innerHTML = Pass;
+                check1 = 1;
+            }
+            else {
+                document.getElementById("CheckPass").innerHTML = "Mật khẩu ít nhất 6 ký tự";
+                document.getElementById("CheckPass").innerHTML = "<img src='../img/IconTest/error.png' title='Mật khẩu ít nhất 6 ký tự'/>";
+
+                check1 = 0;
+            }
+
+            ////Kiểm tra ngày tháng năm sinh đúng định dạng
+            var date_regex = /^(0[1-9]|1\d|2\d|3[01])\/(0[1-9]|1[0-2])\/(19|20)\d{2}$/;
+
+            if (!date_regex.test(Birthday)) {
+                document.getElementById("CheckDate").innerHTML = "Sai giá trị hoặc định dạng (dd/yy/mmmm)";
+                document.getElementById("CheckDate").innerHTML = "<img src='../img/IconTest/error.png' title='Sai giá trị hoặc định dạng (dd/yy/mmmm)'/>";
+                check2 = 0;
+
+            }
+            else {
+                //document.getElementById("CheckDate").innerHTML = "OK";
+                document.getElementById("CheckDate").innerHTML = "<img src='../img/IconTest/ok.png' alt='OK'/>";
+
+                document.getElementById("NSNhap").innerHTML = Birthday;
+                check2 = 1;
+            }
+            //Kiểm tra email
+            var email_regex = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
+            if (!email_regex.test(Email)) {
+                //document.getElementById("CheckMail").innerHTML = "Sai giá trị hoặc định dạng (xxx@xxx.com)";
+                document.getElementById("CheckMail").innerHTML = "<img src='../img/IconTest/error.png' title='Sai giá trị hoặc định dạng (xxx@xxx.com)'/>";
+
+
+                check3 = 0;
+            }
+            else {
+                //document.getElementById("CheckMail").innerHTML = "OK";
+                document.getElementById("CheckMail").innerHTML = "<img src='../img/IconTest/ok.png' alt='OK'/>";
+
+                document.getElementById("MailNhap").innerHTML = Email;
+                check3 = 1;
+            }
+            //Kiểm tra SDT
+            var mobile_regex = /^0\d{10}$/;
+            if (!mobile_regex.test(SDT)) {
+                document.getElementById("CheckPhone").innerHTML = "Sai giá trị hoặc định dạng (0xxxxxxxx-11 số)";
+                document.getElementById("CheckPhone").innerHTML = "<img src='../img/IconTest/error.png' title='Sai giá trị hoặc định dạng (0xxxxxxxx-11 số)'/>";
+                check4 = 0;
+            }
+            else {
+                //alert("OK");
+                //document.getElementById("CheckPhone").innerHTML = "OK";
+                document.getElementById("CheckPhone").innerHTML = "<img src='../img/IconTest/ok.png' alt='OK'/>";
+                document.getElementById("SDTNhap").innerHTML = SDT;
+                check4 = 1;
+            }
+            //Kiểm tra đủ điều kiện đăng ký
+
+            if (check1 == 1 && check2 == 1 && check3 == 1 && check4 == 1) {
+                return true;
+            }
+
+            else {
+                return false;
+            }
+        }
+
+        function DK() {
+            if (Check()) {
+                document.getElementById('id02').style.display = 'none';
+                document.getElementById('id03').style.display = 'block';
+                document.getElementById('id01').style.display = 'none';
+            }
+
+
+        }
+        function ChuyenSangDN() {
+            document.getElementById('id02').style.display = 'none';
+            document.getElementById('id03').style.display = 'none';
+            document.getElementById('id01').style.display = 'block';
+        }
+
+    </script>
+    <!--start: Navbar -->
+    <nav class="navbar navbar-default" role="navigation" id="NonBackground">
+        <!--start: Container -->
+        <div class="container">
+            <!-- Thu Menu lại thành 1 nút menu khi dùng điện thoại hay thu nhỏ trang web -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navigation" style="max-width: 45px;">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="logo" href="../../index.html"><img src="../img/LogoTest/logo.png" /></a>
+            </div>
+
+
+            <div class="collapse navbar-collapse" id="main-navigation">
+                <ul class="nav navbar-right navbar-nav">
+                    <li class="hvr-sweep-to-bottom"><a href="../../index.html">Home</a></li>
+                    <li class="hvr-sweep-to-bottom"><a href="#">About</a></li>
+                    <!--<li class="hvr-sweep-to-bottom"><a href="/../Link/DangNhap.html">Login</a></li>-->
+                    <li class="hvr-sweep-to-bottom"><a onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</a></li>
+                    <li class="hvr-sweep-to-bottom"><a onclick="document.getElementById('id02').style.display='block'" style="width:auto;">&nbsp;&nbsp;reg&nbsp;&nbsp; </a></li>
+                    <li class="hvr-sweep-to-bottom"><a href="LinkToLAB.html">&nbsp;&nbsp;lab&nbsp;&nbsp; </a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!--/.container-->
+    </nav>
+
+    <!--start: Container -->
+    <div class="container">
+        <!-- start: SlideShow -->
+        <div class="slider">
+
+            <div id="flex1" class="flexslider">
+                <ul class="slides">
+                    <li>
+                        <img src="../img/Images/background.jpg" alt="Image1" />
+                        <div class="slide-caption">
+                            <a href="#"><h3>WHY JAVA IS POPULAR TODAY ?</h3></a>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="../img/Images/background2.jpg" alt="Image2" />
+                        <div class="slide-caption hidden-phone">
+                            <a href="#"><h3>LEARN PYTHON CODE FIRT ?</h3></a>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="../img/Images/background3.jpg" alt="Image3" />
+                        <div class="slide-caption hidden-phone">
+                            <a href="#"><h3>HOW TO DEBUG JAVASCRIPT ?</h3></a>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="../img/Images/background4.jpg" alt="Image3" />
+                        <div class="slide-caption hidden-phone">
+                            <a href="#"><h3>WHICH LANGUAGE SHOULD I LEARN ?</h3></a>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="../img/Images/background5.jpg" alt="Image3" />
+                        <div class="slide-caption hidden-phone">
+                            <a href="#"><h3>C# IS THE BEST </h3></a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+    <!-- end: SlideShow -->
+
+    <div class="About">
+
+        <h1 style="text-align:center">Information</h1>
+        <br />
+        <div class="row">
+
+
+            <div class="col-sm-6 col-md-4">
+
+                <div id="Area1">
+                    <div id="Temp">
+                        <div id="Avatar"></div>
+                    </div>
+                    <div id="Content">
+                        <div id="Title"><h1>Cao Do Thinh Khanh</h1></div>
+                        <div id="Banner"><h2 style="color:white">MEMBER</h2></div>
+                        <div id="Title2"><h2>Info</h2></div>
+
+                        <ul>
+                            <li>
+                                <p>
+                                    ID: 1512981 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    Class : CTK39
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    Age : 21&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    Weight : 52 kg
+                                </p>
+                            </li>
+                            <!--<li><p>Height : 1.72 m</p></li>-->
+                        </ul>
+
+
+
+                        <!--<div id="Title2"><h2>More</h2></div>
+                        <ul>
+                            <li><p>Likes : dance, electronics, gaming, machining, pet, go out...</p></li>
+                            <li><p>Hate : cooking, drawing, photography, hunting, yoga, shopping, gardening...</p></li>
+                            <li><p>Dream : become an IT engineer</p></li>
+                        </ul>-->
+                        <div id="Title2"><h2>Contact</h2></div>
+                        <ul>
+
+                            <li><p>Phone :0987562153</p></li>
+                            <li><p>Email : CaoDoThinhKhanh972@gmail.com</p></li>
+                            <li><p>Facebook:<a href="http://facebook.com/Khanh.Cao" target="_blank">facebook.com/Cao.Khanh</a></p></li>
+                        </ul>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4">
+
+                <div id="Area1">
+                    <div id="Temp">
+                        <div id="Avatar3"></div>
+                    </div>
+                    <div id="Content">
+                        <div id="Title"><h1>Nguyen Van Vuong</h1></div>
+                        <div id="Banner"><h2 style="color:white">LEADER</h2></div>
+                        <div id="Title2"><h2>Info</h2></div>
+                        <ul>
+                            <li>
+                                <p>
+                                    ID: 1510289 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    Class : CTK39
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    Age : 21&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    Weight : 70 kg
+                                </p>
+                            </li>
+                            <!-- <li><p>Height : 1.81 m</p></li>-->
+                        </ul>
+                        <!--<div id="Title2"><h2>More</h2></div>
+                        <ul>
+                            <li><p>Likes : dance, electronics, gaming, machining, pet, go out...</p></li>
+                            <li><p>Hate : cooking, drawing, photography, hunting, yoga, shopping, gardening...</p></li>
+                            <li><p>Dream : become an IT engineer</p></li>
+                        </ul>-->
+                        <div id="Title2"><h2>Contact</h2></div>
+                        <ul>
+
+                            <li><p>Phone :01675528766</p></li>
+                            <li><p>Email : Nguyenvanvuong972@gmail.com</p></li>
+                            <li><p>Facebook:<a href="http://facebook.com/hoalaxanh123" target="_blank">facebook.com/hoalaxanh123</a></p></li>
+                        </ul>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4">
+
+                <div id="Area1">
+                    <div id="Temp">
+                        <div id="Avatar2"></div>
+                    </div>
+                    <div id="Content">
+                        <div id="Title"><h1>Pham Trong Tuan</h1></div>
+                        <div id="Banner"><h2 style="color:white">MEMBER</h2></div>
+                        <div id="Title2"><h2>Info</h2></div>
+                        <ul>
+                            <li>
+                                <p>
+                                    ID: 1511209 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    Class : CTK39
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    Age : 21&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    Weight : 48 kg
+                                </p>
+                            </li>
+                            <!--<li><p>Height : 1.70 m</p></li>-->
+                        </ul>
+                        <!--<div id="Title2"><h2>More</h2></div>
+                        <ul>
+                            <li><p>Likes : dance, electronics, gaming, machining, pet, go out...</p></li>
+                            <li><p>Hate : cooking, drawing, photography, hunting, yoga, shopping, gardening...</p></li>
+                            <li><p>Dream : become an IT engineer</p></li>
+                        </ul>-->
+                        <div id="Title2"><h2>Contact</h2></div>
+                        <ul>
+
+                            <li><p>Phone :01698456321</p></li>
+                            <li><p>Email : TrongTuan972@gmail.com</p></li>
+                            <li><p>Facebook:<a href="http://facebook.com/Tuan.Trong" target="_blank">facebook.com/Tuan.Trong</a></p></li>
+                        </ul>
+
+
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+        <div class="row">
+
+
+            <div class="col-sm-6 col-md-4">
+
+                <div id="Area1">
+                    <div id="Temp">
+                        <div id="Avatar"></div>
+                    </div>
+                    <div id="Content">
+                        <div id="Title"><h1>Cao Do Thinh Khanh</h1></div>
+                        <div id="Banner"><h2 style="color:white">MEMBER</h2></div>
+                        <div id="Title2"><h2>Info</h2></div>
+
+                        <ul>
+                            <li>
+                                <p>
+                                    ID: 1512981 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    Class : CTK39
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    Age : 21&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    Weight : 52 kg
+                                </p>
+                            </li>
+                            <!--<li><p>Height : 1.72 m</p></li>-->
+                        </ul>
+
+
+
+                        <!--<div id="Title2"><h2>More</h2></div>
+                        <ul>
+                            <li><p>Likes : dance, electronics, gaming, machining, pet, go out...</p></li>
+                            <li><p>Hate : cooking, drawing, photography, hunting, yoga, shopping, gardening...</p></li>
+                            <li><p>Dream : become an IT engineer</p></li>
+                        </ul>-->
+                        <div id="Title2"><h2>Contact</h2></div>
+                        <ul>
+
+                            <li><p>Phone :0987562153</p></li>
+                            <li><p>Email : CaoDoThinhKhanh972@gmail.com</p></li>
+                            <li><p>Facebook:<a href="http://facebook.com/Khanh.Cao" target="_blank">facebook.com/Cao.Khanh</a></p></li>
+                        </ul>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4">
+
+                <div id="Area1">
+                    <div id="Temp">
+                        <div id="Avatar3"></div>
+                    </div>
+                    <div id="Content">
+                        <div id="Title"><h1>Nguyen Van Vuong</h1></div>
+                        <div id="Banner"><h2 style="color:white">LEADER</h2></div>
+                        <div id="Title2"><h2>Info</h2></div>
+                        <ul>
+                            <li>
+                                <p>
+                                    ID: 1510289 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    Class : CTK39
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    Age : 21&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    Weight : 70 kg
+                                </p>
+                            </li>
+                            <!-- <li><p>Height : 1.81 m</p></li>-->
+                        </ul>
+                        <!--<div id="Title2"><h2>More</h2></div>
+                        <ul>
+                            <li><p>Likes : dance, electronics, gaming, machining, pet, go out...</p></li>
+                            <li><p>Hate : cooking, drawing, photography, hunting, yoga, shopping, gardening...</p></li>
+                            <li><p>Dream : become an IT engineer</p></li>
+                        </ul>-->
+                        <div id="Title2"><h2>Contact</h2></div>
+                        <ul>
+
+                            <li><p>Phone :01675528766</p></li>
+                            <li><p>Email : Nguyenvanvuong972@gmail.com</p></li>
+                            <li><p>Facebook:<a href="http://facebook.com/hoalaxanh123" target="_blank">facebook.com/hoalaxanh123</a></p></li>
+                        </ul>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4">
+
+                <div id="Area1">
+                    <div id="Temp">
+                        <div id="Avatar2"></div>
+                    </div>
+                    <div id="Content">
+                        <div id="Title"><h1>Pham Trong Tuan</h1></div>
+                        <div id="Banner"><h2 style="color:white">MEMBER</h2></div>
+                        <div id="Title2"><h2>Info</h2></div>
+                        <ul>
+                            <li>
+                                <p>
+                                    ID: 1511209 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    Class : CTK39
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    Age : 21&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    Weight : 48 kg
+                                </p>
+                            </li>
+                            <!--<li><p>Height : 1.70 m</p></li>-->
+                        </ul>
+                        <!--<div id="Title2"><h2>More</h2></div>
+                        <ul>
+                            <li><p>Likes : dance, electronics, gaming, machining, pet, go out...</p></li>
+                            <li><p>Hate : cooking, drawing, photography, hunting, yoga, shopping, gardening...</p></li>
+                            <li><p>Dream : become an IT engineer</p></li>
+                        </ul>-->
+                        <div id="Title2"><h2>Contact</h2></div>
+                        <ul>
+
+                            <li><p>Phone :01698456321</p></li>
+                            <li><p>Email : TrongTuan972@gmail.com</p></li>
+                            <li><p>Facebook:<a href="http://facebook.com/Tuan.Trong" target="_blank">facebook.com/Tuan.Trong</a></p></li>
+                        </ul>
+
+
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+
+
+    </div>
+    <!-- start: Footer -->
+    <div id="footer">
+
+        <!-- start: Container -->
+        <div class="container">
+
+            <!-- start: Row -->
+            <div class="row">
+                <!-- start: About -->
+                <div class="col-sm-3">
+
+                    <h3>About us</h3>
+                    <p>Faculty of Information Technology (IT) - Da Lat University was established in July 2003 with 5 full-time teachers, more than 70 students studying. Over the years, the Faculty has constantly developed and grown into one of the important faculties of the University of Dalat.</p>
+
+                </div>
+                <!-- end: About -->
+                <!-- start: Photo Stream -->
+                <div class="col-sm-3">
+
+                    <h3>Study</h3>
+                    <div class="flickr-widget">
+                        <a href="#"><img src="../img/IconTest/iconpack/cpp.png" title="CPP" /></a>
+                        <a href="#"><img src="../img/IconTest/iconpack/Csharp.png" title="C#" /></a>
+                        <a href="#"><img src="../img/IconTest/iconpack/CSS.png" title="CSS" /></a>
+                        <a href="#"><img src="../img/IconTest/iconpack/html.png" title="HTML" /></a>
+                        <a href="#"><img src="../img/IconTest/iconpack/JAVA.png" title="JAVA" /></a>
+                        <a href="#"><img src="../img/IconTest/iconpack/pYTHON.png" title="PYTHON" /></a>
+                        <a href="#"><img src="../img/IconTest/iconpack/ASSEMBLY.png" title="ASSEMBLY" /></a>
+                        <div class="clear"></div>
+                    </div>
+
+                </div>
+                <!-- end: Photo Stream -->
+                <div class="col-sm-6">
+
+                    <!-- start: Follow Us -->
+                    <h3>Follow Us!</h3>
+                    <ul class="Social">
+                        <li>
+                            <a href="#"><img src="../img/icons/social/twitter.png" /></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="../img/icons/social/facebook.png" /></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="../img/icons/social/vimeo.png" /></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="../img/icons/social/tumblr.png" /></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="../img/icons/social/yahoo.png" /></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="../img/icons/social/amazon.png" /></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="../img/icons/social/blogger.png" /></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="../img/icons/social/googleplus.png" /></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="../img/icons/social/github.png" /></a>
+                        </li>
+
+
+                    </ul>
+                    <br />
+                    <br />
+                    <!-- end: Follow Us -->
+                    <!-- start: Contact-->
+                    <h3>Contact</h3>
+                    <h4>Please leave us your email</h4>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <input type="text" placeholder="Enter your mail">
+                            <input type="button" value="Submit!">
+                        </div>
+                    </div>
+
+                    <!-- end: Contact -->
+
+                </div>
+
+            </div>
+            <!-- end: Row -->
+
+        </div>
+        <!-- end: Container  -->
+    </div>
+    <!-- start: Copyright -->
+    <div class="Slogan"></div>
+    <div id="copyright">
+        <!-- start: Container -->
+        <div class="container">
+
+            <div class="col-sm-12">
+                <p>
+                    &copy; 2017 Theme design by  1510289 <img src="../img/poland2.png" alt="Poland" style="margin-top:-4px"> <a href="http://cntt.dlu.edu.vn" alt="ITDLU" target="_blank">DaLat University</a> .
+                </p>
+                <p>
+                    &spades; Reference source from <a href="http://bootstrapmaster.com">BootstrapMaster</a> &spades;
+                </p>
+            </div>
+
+        </div>
+        <!-- end: Container  -->
+
+    </div>
+    <!--Start: Login area ( Default: Hidden)-->
+    <div id="id01" class="modal_2">
+
+        <form class="modal_2-content animate">
+            <div class="imgcontainer">
+                <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                <img src="../img/anhThe/images_Login.png" alt="Avatar" class="avatar">
+            </div>
+
+            <div class="container1">
+                <table>
+                    <tr>
+                        <td>
+                            <label><b>Username :</b></label>
+                            <input type="text" placeholder="Enter your username" id="UserLG" onfocus="CheckLG('UserLG')" onchange="CheckLG('UserLG')" />
+                        </td>
+                        <td id="KiemTra">
+                            <h4 id="CheckUserLogin"></h4>
+                        </td>
+
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label><b>Password :</b></label>
+                            <input type="password" placeholder="Enter your password" id="PassLG" onfocus="CheckLG('PassLG')" onchange="CheckLG('PassLG')" />
+                        </td>
+                        <td id="KiemTra">
+                            <h4 id="CheckPassLogin"></h4>
+                        </td>
+                    </tr>
+
+                </table>
+
+
+                <button type="button" onclick="Login()">Login</button>
+                <input type="checkbox" checked="checked" name="Remember"> Remember me
+            </div>
+
+            <div class="container1" style="background-color:#f1f1f1;border-radius: 0px 0px 25px 25px;">
+                <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                <span class="psw"><a href="#">Forgot password?</a></span>
+            </div>
+        </form>
+    </div>
+
+
+
+    <!-- End: Login area ( Default: Hidden)-->
+    <!--Start: Reg area ( Default: Hidden)-->
+    <div id="id02" class="modal_2">
+
+        <form class="modal_2-content animate">
+            <div class="imgcontainer">
+
+                <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+                <img src="../img/anhThe/images_Login.png" alt="Avatar" class="avatar">
+            </div>
+
+            <div class="container1">
+                <table>
+                    <tr>
+                        <td>
+                            <label><b>Username :</b></label>
+                            <input type="text" placeholder="Enter your username" id="UserDK" onfocus="Check()" onchange="Check()" />
+                        </td>
+                        <td id="KiemTra">
+                            <h4 id="CheckUser"></h4>
+                        </td>
+
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label><b>Password :</b></label>
+                            <input type="password" placeholder="Enter your password" id="PassDK" onfocus="Check()" onchange="Check()" />
+                        </td>
+                        <td id="KiemTra">
+                            <h4 id="CheckPass"></h4>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label><b>Email :</b></label>
+                            <input type="text" placeholder="Enter your email" id="MailDK" onfocus="Check()" onchange="Check()" required>
+                        </td>
+                        <td id="KiemTra">
+                            <h4 id="CheckMail"></h4>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label><b>Birthday :</b></label>
+                            <input type="text" placeholder="Enter your birth day" id="NSinhDK" onfocus="Check()" onchange="Check()" required>
+                        </td>
+                        <td id="KiemTra">
+                            <h4 id="CheckDate"></h4>
+                        </td>
+
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label><b>Phone :</b></label>
+                            <input type="text" placeholder="Enter your phone" id="PhoneDK" onfocus="Check()" onchange="Check()">
+                        </td>
+                        <td id="KiemTra">
+                            <h4 id="CheckPhone"></h4>
+                        </td>
+                    </tr>
+
+
+                </table>
+
+                <button type="button" onclick="DK()">Register</button>
+            </div>
+
+            <div class="container1" style="background-color:#f1f1f1;border-radius: 0px 0px 25px 25px;">
+                <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+                <span class="psw"> You have a account ?<a href="#" onclick="ChuyenSangDN()">Click here</a></span>
+            </div>
+        </form>
+    </div>
+
+    <div id="id03" class="modal_2">
+
+        <div class="modal_2-content animate">
+
+            <table cellpadding="0" cellspacing="1" style="font-size:190%;">
+
+                <tr>
+                    <th colspan="2" style="text-align:center"><h1 style="color:red">Sign-up Success !!!</h1></th>
+
+                </tr>
+                <tr>
+
+                    <td>&nbsp; Name : </td>
+                    <td><h2 id="TenNhap"></h2></td>
+                </tr>
+
+                <tr>
+                    <td>&nbsp; Pass :</td>
+                    <td><h3 id="MKNhap"></h3></td>
+                </tr>
+
+
+                <tr>
+                    <td>&nbsp; Birthday : </td>
+                    <td><h3 id="NSNhap"></h3></td>
+                </tr>
+
+                <tr>
+                    <td>&nbsp; Email :</td>
+                    <td><h3 id="MailNhap"></h3></td>
+                </tr>
+
+                <tr>
+                    <td>&nbsp; Phone : </td>
+                    <td><h3 id="SDTNhap"></h3></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input style="float:right" type="button" value="Close" onclick="document.getElementById('id03').style.display='none'" />
+                    </td>
+
+                </tr>
+
+
+            </table>
+        </div>
+    </div>
+
+
+    <!-- End: Reg area ( Default: Hidden)-->
+    <!-- end: Copyright -->
+    <!-- start: Java Script -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../js/jquery-1.9.1.min.js"></script>
+    <script src="../js/flexslider.js"></script>
+    <script src="../js/carousel.js"></script>
+    <script src="../js/jquery.cslider.js"></script>
+    <script src="../js/slider.js"></script>
+    <script src="../js/custom.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- end: Java Script -->
+
+</body>
+</html>

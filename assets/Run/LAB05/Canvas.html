@@ -1,0 +1,52 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+          "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+    <title>Canavas</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style></style>
+</head>
+<body>
+
+    <canvas id="myCanvas" width="550" height="400" style="border:1px solid black;">
+        Your browser does not support the HTML5 canvas tag.
+    </canvas>
+
+    <script>
+        var c = document.getElementById("myCanvas");
+        var ctx = c.getContext("2d");
+        ctx.beginPath();
+        ctx.arc(200, 200, 50, 0, 2 * Math.PI);
+        ctx.stroke();
+    </script>
+
+
+    <script>
+        var c = document.getElementById("myCanvas");
+        var ctx = c.getContext("2d");
+        ctx.moveTo(50, 50);
+        ctx.lineTo(350, 350);
+        ctx.stroke();
+    </script>
+
+    <script>
+        var c = document.getElementById("myCanvas");
+        var ctx = c.getContext("2d");
+        ctx.font = "15px Verdana";
+        ctx.fillText("Nguyễn Văn Vương", 350, 50);
+    </script>
+
+    <script>
+        var c = document.getElementById("myCanvas");
+        var ctx = c.getContext("2d");
+        // Create gradient
+        var grd = ctx.createLinearGradient(0, 0, 200, 0);
+        grd.addColorStop(0, "red");
+        grd.addColorStop(1, "white");
+        // Fill with gradient
+        ctx.fillStyle = grd;
+        ctx.fillRect(0, 0, 100, 25);
+    </script>
+
+</body>
+</html>

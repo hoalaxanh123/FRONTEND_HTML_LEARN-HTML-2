@@ -1,0 +1,138 @@
+﻿body {
+    margin: 0 auto;
+    padding: 0;
+    height: 100%;
+    font-family: "Segoe UI Webfont","Ebrima","Nirmala UI";
+    font-size: 15px;
+    width: 600px;
+    text-align:left;
+}
+
+a {
+    text-decoration: none;
+}
+
+div {
+    float: left;
+}
+
+.text_header {
+    font-size: 34px;
+    line-height: 40px;
+    font-weight: 200;
+    margin-top:-15px;
+}
+
+h4 {
+    font-weight: normal;
+}
+
+.form_control {
+    border-style: solid;
+    border-width: 2px;
+    border-color: rgba(0,0,0,0.4);
+    height: 20px;
+}
+
+.new_email {
+    margin-top: 5px;
+    color: #0078d7;
+    font-size: 12px;
+}
+
+.form_button {
+    background-color: #0078d7;
+    border-color: #0078d7;
+    color: #fff;
+}
+
+.Row {
+    width: 600px;
+    height: 20px;
+    margin-top:-20px;
+}
+
+    .Row #col1, #col2 {
+        width: 250px;
+        height: 20px;
+        margin-top: -20px;
+    }
+
+.Row2 input {
+    margin-top: 10px;
+    width: 295px;
+}
+
+.Row3 {
+    width: 600px;
+}
+
+    .Row3 #col1 {
+        height: 45px;
+    }
+
+    .Row3 input {
+        width: 600px;
+    }
+
+.Row4 {
+    width: 600px;
+}
+
+.Row5 {
+}
+
+    .Row5 #col1 {
+        height: 45px;
+    }
+
+    .Row5 select {
+        margin-top: 2px;
+        width: 600px;
+        height: 25px;
+    }
+
+.Row6 #cot1_title {
+    margin-top: 15px;
+    width: 600px;
+    height: 45px;
+}
+
+.Row6 #cot1 select, #cot2 select, #cot3 select {
+    width: 196px;
+    height: 25px;
+}
+
+.Row6 #cot2 select, #cot3 select {
+    margin-left: 6px;
+}
+
+.Row7{
+    margin-top:15px;
+}
+.Row7 #col1 {
+    width: 100%;
+    height: 45px;
+}
+
+.Row7 input {
+    width: 600px;
+    height: 20px;
+}
+.Row7 h5{
+    font-weight:normal;
+    margin-top:5px;
+}
+.Row8{
+    width:600px;
+}
+.Row9{
+    margin-top:20px;
+}
+.Row10{
+    text-align:center;
+}
+.Row10 input{
+    width:600px;
+    height:30px;
+}

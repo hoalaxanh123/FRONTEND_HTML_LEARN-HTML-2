@@ -1,0 +1,216 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+          "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+    <title>Dang ky hoc</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+        input[type='button'] {
+          float:left;
+          margin:10px 0 0 20px;
+        }
+        select{
+            width:120px;
+        }
+
+        label {
+            float: left;
+            text-align: left;
+            width: 80px;
+            margin: 0 0 0 0;
+            margin-top: 12px;
+        }
+
+        input, select {
+            margin-top: 10px;
+            float: left;
+        }
+
+        form {
+           
+            width: 550px;
+            height: 200px;
+            margin-left:30%;
+          
+        }
+
+        div {
+            float: left;
+            margin: 14px 0 0 10px;
+            color: red;
+        }
+
+        #CheckName, #CheckDate, #CheckMail, #CheckPhone,#CheckMH {
+            float: left;
+            margin: 11px 0 0 7px;
+            width: 250px;
+            height: 20px;
+            color: blue;
+            font-size:14px;
+            border:1px solid white;
+        }
+     
+    </style>
+</head>
+<body>
+    <script type="text/javascript">
+        function Delete()
+        {
+            document.getElementById("NAME").value = "";
+            document.getElementById("CheckName").innerHTML = "";
+
+            document.getElementById("BIRTHDAY").value = "";
+            document.getElementById("CheckDate").innerHTML = "";
+
+            document.getElementById("EMAIL").value = "";
+            document.getElementById("CheckMail").innerHTML = "";
+
+            document.getElementById("PHONE").value = "";
+            document.getElementById("CheckPhone").innerHTML = "";
+
+            document.getElementById("MonHoc").value = "";
+            document.getElementById("CheckMH").innerHTML = "";
+
+            document.getElementById("KQ").innerHTML = "";
+        }
+        function Check() {
+            var Name, Birthday, Email, SDT, MonDK;
+            Name = String(document.getElementById("NAME").value);
+            Birthday = document.getElementById("BIRTHDAY").value;
+            Email = String(document.getElementById("EMAIL").value);
+            SDT = String(document.getElementById("PHONE").value);
+            MonDK = document.getElementById("MonHoc").value;
+            var check1 = 0,check2=0,check3=0,check4=0,check5=0;
+
+            //alert(MonDK);
+
+            //alert(Name);
+            //alert(NgaySinh);
+            //alert(Email);
+            //alert(SDT);
+
+
+            //Kiểm tra tên không được trống
+            if (Name.length != 0)
+            {
+
+                document.getElementById("CheckName").innerHTML = "OK";
+                check1=1;
+            }
+            else
+            {
+                document.getElementById("CheckName").innerHTML = "Trường này không được để trống";
+                check1=0;
+            }
+            
+            //Kiểm tra ngày tháng năm sinh đúng định dạng
+            var date_regex = /^(0[1-9]|1\d|2\d|3[01])\/(0[1-9]|1[0-2])\/(19|20)\d{2}$/;
+
+            if (!date_regex.test(Birthday))
+            {
+                document.getElementById("CheckDate").innerHTML = "Sai giá trị hoặc định dạng (dd/yy/mmmm)";
+                check2=0;
+
+            }
+            else
+            {
+                document.getElementById("CheckDate").innerHTML = "OK";
+                check2=1;
+            }
+            //Kiểm tra email
+            var email_regex = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
+            if (!email_regex.test(Email))
+            {
+                document.getElementById("CheckMail").innerHTML = "Sai giá trị hoặc định dạng (xxx@xxx.com)";
+                check3=0;
+            }
+            else
+            {
+                document.getElementById("CheckMail").innerHTML = "OK";
+                check3=1;
+            }
+            //Kiểm tra SDT
+            var mobile_regex = /^0\d{10}$/;
+            if (!mobile_regex.test(SDT))
+            {
+                document.getElementById("CheckPhone").innerHTML = "Sai giá trị hoặc định dạng (0xxxxxxxx-11 số)";
+                check4=0;
+            }
+            else
+            {
+                document.getElementById("CheckPhone").innerHTML = "OK";
+                check4=1;
+            }
+            //Kiểm tra khóa học
+            if (MonDK == "-------------")
+            {
+                document.getElementById("CheckMH").innerHTML = "Chưa chọn môn học";
+                check5=0;
+            }
+               
+            else
+            {
+                document.getElementById("CheckMH").innerHTML = "OK";
+                check5=1;
+            }
+            
+            //Kiểm tra đủ điều kiện đăng ký
+         
+            if (check1 == 1 && check2 == 1 && check3 == 1 && check4 == 1 & check5 == 1)
+                document.getElementById("KQ").innerHTML = "Đăng ký thành công môn học " + MonDK+" !";
+            else
+                document.getElementById("KQ").innerHTML = "";
+           
+        }
+
+    </script>
+    
+    <form action="#"  name="DKHP">
+        <span style="float:left;font-size:15px">P/s:form nhập sẵn đỡ mất thời gian</span>
+        <br />
+        <label>Tên :</label>
+        <input type="text"  id="NAME" value="Nguyễn Văn Vương"/>
+        <div id="NotNull">*</div>
+        <div id="CheckName"></div>
+       
+        <label>Ngày sinh :</label>
+        <input type="text" id="BIRTHDAY" required value="12/04/1997" />
+        <div id="NotNull">*</div>
+        <div id="CheckDate"></div>
+        <br />
+        <label>Email :</label>
+        <input type="text" id="EMAIL" required value="nguyenvanvuong972@gmail.com" />
+        <div id="NotNull">*</div>
+        <div id="CheckMail"></div>
+        <br />
+        <label>SDT :</label>
+        <input type="text" ID="PHONE" required value="01675528766" />
+        <div id="NotNull">*</div>
+        <div id="CheckPhone"></div>
+        <br />
+        <label style="width:120px;">Đăng ký học lại</label>
+        <select id="MonHoc">
+            <option>-------------</option>
+            <option>Lập trình web</option>
+            <option>Thiết kế web</option>
+            <option>C#</option>
+            <option>Java</option>
+        </select>
+        <div id="NotNull">*</div>
+        <div id="CheckMH"></div>
+        <br />
+        <br />
+     
+        <div style="margin-left:50px">
+            <input type="button" name="Dangky" value="Đăng ký" onclick="Check()" />
+            <input type="button" name="Reset" value="Hủy" onclick="Delete()" />
+        </div>
+        <div style="margin:50px 0 0 -200px">
+            <div id="KQ"></div>
+        </div>
+        
+
+
+    </form>
+</body>
+</html>

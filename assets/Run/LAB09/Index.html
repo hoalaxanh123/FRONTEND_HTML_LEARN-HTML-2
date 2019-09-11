@@ -1,0 +1,81 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+          "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+    <title>Index</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+        body{
+            font-size:50px;
+
+        }
+        input {
+            margin-top: 10px;
+            margin-left: 5px;
+            height:40px;
+            font-size:25px;
+            font-weight:bold;
+            text-align:right;
+           
+        }
+        span{
+            
+        }
+        input[type='button']
+        { width:40px;
+          height:40px;
+          text-align:center;
+        }
+        #NB{
+            margin-left:110px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <script LANGUAGE="JavaScript">
+            function TinhToan(PT1)
+            {
+                var Number1, Number2, PhepToan,KQ;
+
+                Number1 = Number(document.forms["MyForm"]["NumberOne"].value);
+                Number2 = Number(document.forms["MyForm"]["NumberTwo"].value);
+      
+                switch (PT1)
+                {
+                    case "Cong":
+                        KQ = Number1 + Number2;
+                    
+                        break;
+                    case "Tru":
+                        KQ = Number1 - Number2;
+                        break;
+                    case "Nhan":
+                        KQ = Number1 * Number2;
+                        break;
+                    case "Chia":
+                        KQ = Number1 / Number2;
+                        break;
+
+                }
+                document.forms["MyForm"]["KetQua"].value =KQ;
+            //document.getElementById("Test").innerHTML = PT1;
+        }
+        </script>
+        <form name="MyForm">
+            <span>a: </span><input id ="NB" type="number"  value=2 name="NumberOne" />
+            <br />
+            <span>b: </span><input id ="NB" type="number"  value=3 name="NumberTwo" />
+            <br />
+            <input type="button" id="PT" name="PT" value="+" onclick=TinhToan("Cong") style="margin-left:210px"/>
+            <input type="button" id="PT" name="PT" value="-" onclick=TinhToan("Tru") />
+            <input type="button" id="PT" name="PT" value="*" onclick=TinhToan("Nhan") />
+            <input type="button" id="PT" name="PT" value="/" onclick=TinhToan("Chia") />
+            <br />
+            <span>Result:  </span> <input type="number" id="KQ" value=3 name="KetQua" />
+            <!--<h3 id="Test">ok</h3>-->
+        </form>
+
+    </div>
+</body>
+</html>

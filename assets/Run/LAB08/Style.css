@@ -1,0 +1,611 @@
+body {
+    margin: 0 auto;
+    padding: 0px;
+    width: 1140px;
+}
+
+.Header {
+    width: 1140px;
+    height: 150px;
+}
+
+    .Header #Logo {
+        float: left;
+        margin: 40px 0 0 40px;
+        width: 270px;
+        height: 70px;
+    }
+
+    .Header #Menu {
+        float: left;
+        margin: 0px 0 0 40px;
+        width: 450px;
+        height: 130px;
+    }
+
+        .Header #Menu ul li a {
+            text-decoration: none;
+            color: #000;
+            font-size: 1.3em;
+            margin-right: .4em;
+            float: left;
+            padding: 3em 0em 1.5em 0em;
+            text-align: center;
+            width: 100%;
+            font-family: 'Alegreya', serif;
+        }
+
+        .Header #Menu ul {
+            margin: 0 0 0 -20px;
+            list-style: none;
+        }
+
+        .Header #Menu li {
+            display: inline-block;
+            float: left;
+            width: 90px;
+            text-align: center;
+            height: 100px;
+        }
+
+        .Header #Menu ul li.active {
+            background: #a7cbb4;
+        }
+
+        .Header #Menu li a.hover {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .Header #Menu li.active a {
+            color: #fff;
+        }
+/*Code truot len truot xuong cua thay*/
+/* Sweep To Bottom */
+.hvr-sweep-to-bottom {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    transform: translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -moz-osx-font-smoothing: grayscale;
+    -ms-osx-font-smoothing: grayscale;
+    -o-osx-font-smoothing: grayscale;
+    position: relative;
+    -webkit-transition-property: color;
+    -o-transition-property: color;
+    -moz-transition-property: color;
+    -ms-transition-property: color;
+    transition-property: color;
+    -webkit-transition-duration: 0.3s;
+    -o-transition-duration: 0.3s;
+    -moz-transition-duration: 0.3s;
+    -ms-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+}
+
+    .hvr-sweep-to-bottom:before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: #a7cbb4;
+        -webkit-transform: scaleY(0);
+        -o-transform: scaleY(0);
+        -moz-transform: scaleY(0);
+        -ms-transform: scaleY(0);
+        transform: scaleY(0);
+        -webkit-transform-origin: 50% 0;
+        -o-transform-origin: 50% 0;
+        -moz-transform-origin: 50% 0;
+        -ms-transform-origin: 50% 0;
+        transform-origin: 50% 0;
+        -webkit-transition-property: transform;
+        -o-transition-property: transform;
+        -moz-transition-property: transform;
+        -ms-transition-property: transform;
+        transition-property: transform;
+        -webkit-transition-duration: 0.3s;
+        -o-transition-duration: 0.3s;
+        -moz-transition-duration: 0.3s;
+        -ms-transition-duration: 0.3s;
+        transition-duration: 0.3s;
+        -webkit-transition-timing-function: ease-out;
+        -o-transition-timing-function: ease-out;
+        -moz-transition-timing-function: ease-out;
+        -ms-transition-timing-function: ease-out;
+        transition-timing-function: ease-out;
+    }
+
+    .hvr-sweep-to-bottom:hover, .hvr-sweep-to-bottom:focus, .hvr-sweep-to-bottom:active {
+        color: white;
+    }
+
+        .hvr-sweep-to-bottom:hover:before, .hvr-sweep-to-bottom:focus:before, .hvr-sweep-to-bottom:active:before {
+            -webkit-transform: scaleY(1);
+            transform: scaleY(1);
+        }
+
+
+.Header #Search {
+    margin: 50px 0 0 20px;
+    float: left;
+    width: 220px;
+    height: 40px;
+}
+
+    .Header #Search input {
+        float: left;
+        width: 220px;
+        height: 30px;
+        margin: 0 0 0 0;
+    }
+
+        .Header #Search input[type='button'] {
+            float: right;
+            width: 25px;
+            height: 25px;
+            margin: -30px 0 0 0;
+            background: url(images/search-icon.png) no-repeat;
+        }
+
+
+.Content {
+    margin: 0 0 0 1px;
+    width: 1140px;
+    height: 600px;
+    text-align:center;
+}
+
+
+    .Content #Row {
+        margin: 1px 0 0 0;
+        width: 1140px;
+        height: 300px;
+    }
+
+        .Content #Row #Picture1 {
+            float: left;
+            width: 282px;
+            height: 298px;
+            position: relative;
+        }
+
+.Chu {
+    position: absolute; /*Gan vi tri tuyet doi*/
+    bottom: 100%;
+    margin: 300px 0 0 0;
+    background: #89BE9D;
+    /*color:#89BE9D;*/
+    color: yellow;
+    text-align: center;
+    opacity: 0;
+    float: left;
+    overflow: hidden;
+    width: 100%;
+    /*width: 282px;*/
+    height: 5px;
+    transition: all 0.5s; /*Chuyen dong tat ca cac thuoc tinh -> mat 1 giay de thay doi tat ca thuoc tinh*/
+}
+.Chu h4{
+    
+    color:red;
+}
+
+#Picture1:hover > .Chu, #Picture2:hover > .Chu, #Picture3:hover > .Chu, #Picture4:hover > .Chu, #Picture5:hover > .Chu, #Picture6:hover > .Chu {
+    opacity: 0.8;
+    bottom: 0%;
+    height: 100%;
+    width: 100%;
+}
+
+.Content #Row #Picture2 {
+    margin: 0 0 0 2px;
+    float: left;
+    width: 571px;
+    height: 298px;
+    position: relative;
+}
+
+.Content #Row #Picture3 {
+    margin: 0 0 0 2px;
+    float: left;
+    width: 283px;
+    position: relative;
+    height: 298px;
+}
+
+.Content #Row #Picture4 {
+    margin: 0 0 0 0px;
+    float: left;
+    width: 568px;
+    height: 298px;
+    position: relative;
+}
+
+.Content #Row #Picture5 {
+    margin: 0 0 0 3px;
+    float: left;
+    width: 283px;
+    height: 298px;
+    position: relative;
+}
+
+.Content #Row #Picture6 {
+    margin: 0 0 0 3px;
+    float: left;
+    width: 283px;
+    height: 298px;
+    position: relative;
+}
+
+.Content #Row h2 {
+    margin: 100px 0 0 0;
+    color: blue;
+}
+
+.Content #Row img {
+    height: 100%;
+    width: 100%;
+}
+
+.Review {
+    margin: 80px 0 0 1px;
+    width: 1140px;
+    height: 530px;
+}
+
+
+
+.ChildrenTrainingArea {
+    float: left;
+    width: 365px;
+    height: 480px;
+    border: 1px dashed #88BD99;
+}
+
+    .ChildrenTrainingArea #Content {
+        margin: 0 0 0 20px;
+        float: left;
+    }
+
+        .ChildrenTrainingArea #Content hr {
+            margin-top: 10px;
+            border-style: dashed;
+            width: 320px;
+            height: 0.1px;
+            color: #88BD99;
+            float: left;
+        }
+
+
+        .ChildrenTrainingArea #Content h1, h3, img, h4, a {
+            color: #88BD99;
+            text-decoration: none;
+            float: left;
+        }
+
+        .ChildrenTrainingArea #Content a {
+            margin: 5px 0 0 10px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .ChildrenTrainingArea #Content h4 {
+            margin: 5px 10px 0 10px;
+            font-size: 16px;
+            line-height: 20px;
+            font-weight: normal;
+        }
+        /* */
+        .ChildrenTrainingArea #Content #About {
+            margin-top: 10px;
+            width: 320px;
+            height: 100px;
+        }
+
+            .ChildrenTrainingArea #Content #About #NoiDung {
+                margin: 0 0 0 0px;
+                width: 207px;
+                height: 100px;
+                float: right;
+                text-align: justify;
+            }
+
+                .ChildrenTrainingArea #Content #About #NoiDung #TieuDe {
+                    width: 207px;
+                    height: 35px;
+                }
+
+                .ChildrenTrainingArea #Content #About #NoiDung #NoiDung1 {
+                    width: 207px;
+                    height: 60px;
+                }
+
+            .ChildrenTrainingArea #Content #About #Image {
+                margin: 0 0 0 -21px;
+                width: 110px;
+                height: 100px;
+                float: left;
+            }
+
+
+
+            .ChildrenTrainingArea #Content #About img {
+                width: 100%;
+                height: 100%;
+            }
+
+.More {
+    width: 771px;
+    float: left;
+    height: 480px;
+}
+
+.TrainingWorkoutArea {
+    width: 771px;
+    float: left;
+    height: 200px;
+    margin-left: 15px;
+}
+
+    .TrainingWorkoutArea #ImageTW {
+        width: 300px;
+        float: left;
+        height: 200px;
+    }
+
+        .TrainingWorkoutArea #ImageTW img {
+            width: 100%;
+            height: 100%;
+        }
+
+    .TrainingWorkoutArea #TitleTW {
+        margin: 0 0 0 10px;
+        width: 400px;
+        float: left;
+        height: 50px;
+    }
+
+        .TrainingWorkoutArea #TitleTW h3 {
+            color: #88BD99;
+            font-size: 26px;
+        }
+
+    .TrainingWorkoutArea #ContentTW {
+        margin: 0 0 0 10px;
+        width: 430px;
+        float: left;
+        height: 105px;
+        word-spacing: 2px;
+    }
+
+        .TrainingWorkoutArea #ContentTW h4 {
+            margin: 10px 0 0 0;
+            text-align: justify;
+            font-weight: normal;
+        }
+
+.Intructer {
+    width: 741px;
+    float: left;
+    height: 250px;
+    margin: 30px 0 0 15px;
+    text-align: center;
+}
+
+    .Intructer h3 {
+        float: none;
+    }
+
+    .Intructer img {
+        float: left;
+        margin: 0 0 0 10px;
+    }
+
+    .Intructer hr {
+        float: left;
+    }
+
+.Since1500 {
+    margin: 50px 0 0 0px;
+    width: 1140px;
+    height: 430px;
+    float: left;
+    color: #88BD99;
+}
+
+    .Since1500 h1 {
+        float: none;
+        text-align: center;
+    }
+
+    .Since1500 h2 {
+        width: 350px;
+        float: left;
+    }
+
+    .Since1500 h4, img {
+        margin: 0px 0px 0 0px;
+        float: left;
+    }
+
+    .Since1500 img {
+        margin: 20px 25px 0 45px;
+    }
+
+    .Since1500 #ContentSC {
+        width: 350px;
+        margin: 0px 0 0 50px;
+        height: 400px;
+        text-align: justify;
+        font-weight: normal;
+        float: left;
+    }
+
+        .Since1500 #ContentSC ul {
+            float: left;
+            text-align: justify;
+            margin-left: -20px;
+            list-style-type: none;
+        }
+
+            .Since1500 #ContentSC ul li {
+                line-height: 30px;
+                /*width:100%;*/
+            }
+
+                .Since1500 #ContentSC ul li a {
+                    margin-left: 10px;
+                }
+
+        .Since1500 #ContentSC span {
+            background: url(images/rigt-ar.png) no-repeat;
+            margin: 8px 0 0 0;
+            float: left;
+            height: 16px;
+            width: 16px;
+        }
+
+.Work {
+    margin: 50px 0 0 0px;
+    width: 1140px;
+    height: 480px;
+    float: left;
+    color: #88BD99;
+}
+
+    .Work .Block {
+        margin-left: 42px;
+        width: 230px;
+        height: 430px;
+        float: left;
+    }
+
+        .Work .Block #Logo {
+            margin: 40px 0px 0 45px;
+            width: 130px;
+            height: 130px;
+            float: left;
+        }
+
+        .Work .Block #TitleWork {
+            margin-top: 20px;
+            text-align: center;
+            width: 100%;
+            height: 90px;
+            float: left;
+        }
+
+            .Work .Block #TitleWork h2 {
+                font-weight: bold;
+                font-size: 25px;
+            }
+
+        .Work .Block #Logo img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .Work .Block #ContentWork {
+            margin-top: 0px;
+            text-align: center;
+            width: 100%;
+            height: 120px;
+            float: left;
+        }
+
+            .Work .Block #ContentWork h3 {
+                font-weight: 100;
+                font-size: 20px;
+            }
+
+.Footer {
+    margin: 50px 0 0 0px;
+    width: 1140px;
+    height: 400px;
+    float: left;
+    color: #88BD99;
+    border: 1px solid red;
+    background-color: #A7CBB4;
+}
+
+    .Footer .JoinUs {
+        margin: 50px 0 0 20px;
+        width: 280px;
+        height: 200px;
+        float: left;
+        color: #88BD99;
+    }
+
+    .Footer h1, h3, img, a, input {
+        float: left;
+    }
+
+    .Footer input[type="text"] {
+        width: 330px;
+        height: 40px;
+        border: 1px solid black;
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    .Footer input[type="submit"] {
+        width: 130px;
+        height: 40px;
+        border: 1px solid black;
+        float: right;
+        margin: 20px 20px 0 0;
+        background-color: teal;
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    .Footer h1 {
+        color: black;
+        width: 100%;
+    }
+
+    .Footer h3 {
+        font-weight: 100;
+        color: white;
+    }
+
+    .Footer a {
+        margin-left: 12px;
+        width: 40px;
+        height: 40px;
+    }
+
+        .Footer a:hover {
+            color: red;
+        }
+
+    .Footer .Snippet {
+        margin: 50px 0 0 50px;
+        width: 370px;
+        height: 200px;
+        float: left;
+        text-align: justify;
+        color: #88BD99;
+    }
+
+    .Footer .NewLetter {
+        margin: 50px 0 0 60px;
+        width: 350px;
+        height: 200px;
+        float: left;
+        color: #88BD99;
+    }

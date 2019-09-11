@@ -1,0 +1,189 @@
+﻿body {
+    margin: 0 auto;
+    padding: 0px;
+    height: 100%;
+    font-family: Tahoma;
+    width: 700px;
+}
+
+div {
+    float: left;
+}
+
+a {
+    text-decoration: none;
+    color: #A2B71D;
+}
+
+.Header_LAB06 {
+    width: 700px;
+    height: 100px;
+    margin: 0;
+}
+
+    .Header_LAB06 #Logo_Lab06 {
+        float: left;
+        width: 220px;
+        height: 80px;
+        background-color: green;
+        margin: 10px 0 0 0;
+        background: url(images/img01.gif) no-repeat left center;
+        background-size: 60px 50px;
+    }
+
+        .Header_LAB06 #Logo_Lab06 a {
+            float: left;
+            margin-left: 70px;
+            margin-top: 3px;
+        }
+
+        .Header_LAB06 #Logo_Lab06 h1 {
+            margin-top: 10px;
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        .Header_LAB06 #Logo_Lab06 h2 {
+            margin-top: -20px;
+            font-size: 10px;
+            font-weight: normal;
+        }
+
+    .Header_LAB06 #Menu_Lab06 {
+        margin-top: 20px;
+        float: right;
+        height: 70px;
+        margin-left: 50px;
+        width: 400px;
+    }
+
+        .Header_LAB06 #Menu_Lab06 ul {
+            width: 320px;
+            height: 200px;
+        }
+
+            .Header_LAB06 #Menu_Lab06 ul li {
+                display: inline;
+                font-size: 13px;
+                margin-left: 10px;
+                width: 60px;
+                margin: 0 auto;
+                text-align: center;
+                background: url(images/img02.gif) no-repeat 59px center;
+                float: left;
+            }
+
+.Content_LAb06 {
+    width: 700px;
+    height: 420px;
+   line-height:20px;
+}
+
+    .Content_LAb06 #Subcontent1 {
+        text-align: justify;
+        width: 300px;
+        height: 500px;
+        
+        
+    }
+
+
+        .Content_LAb06 #Subcontent1 a, h5 {
+            font-size: 12px;
+            font-weight: normal;
+            
+
+        }
+
+    .Content_LAb06 a {
+        text-decoration: underline;
+    }
+
+    .Content_LAb06 #Subcontent1 hr {
+        width: 299px;
+    }
+
+    .Content_LAb06 #Link {
+        background: url(images/img05.gif) no-repeat left center;
+    }
+
+    .Content_LAb06 #Subcontent2 {
+        margin-left: 50px;
+        width: 350px;
+        height: 200px;
+    }
+
+.Content_LAb06 #Subcontent2 #title {
+             margin-top:-20px;
+            background: url(images/img04.gif) no-repeat left center;
+        }
+.Content_LAb06 #Subcontent2 #title h5{
+    margin-left:15px;
+}
+.Content_LAb06 #Subcontent2 #content1{
+    margin-top:-40px;
+}
+.Content_LAb06 #Subcontent2 #content1 h6{
+            margin-left:20px;
+            font-weight:normal;
+        }
+.Content_LAb06 #Subcontent2 #content1 hr{
+            margin-left:20px;
+            width:320px;
+            margin-top:-15px;
+            
+           
+        }
+
+.About
+{
+    
+    width: 700px;
+    height: 200px;
+    background:#F5F5F5;
+    display:flex;
+   
+}
+.About #sub{
+    
+    margin:15px auto;
+    width: 660px;
+    height: 170px;
+    
+     background:url(images/img06.jpg) no-repeat right center;
+    
+}
+    .About h5 {
+        font-weight:bold;
+        margin-top:0px;
+        font-size:15px;
+    }
+    .About h6 {
+        width:340px;
+        height:40px;
+        text-align:justify;
+        font-weight:normal;
+        font-size:13px;
+        margin:-15px 0 0 0;
+    }
+    .About ol{
+        width:330px;
+        line-height:19px;
+        font-size:13px;
+        margin:-1px 0 0 0;
+    }
+.Footer1{
+    width:500px;
+    height:100px;
+    background:url(images/img01.gif)no-repeat left center;
+}
+.Footer1 h6{
+    margin:35px 0 0 70px;
+}
+.Footer1 ul{
+     margin:1px 0 0 30px;
+}
+.Footer1 ul li{
+    display:inline;
+    font-size:12px;
+}

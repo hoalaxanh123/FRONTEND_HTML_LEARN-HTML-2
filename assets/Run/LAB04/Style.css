@@ -1,0 +1,33 @@
+﻿body {
+    margin: 0 auto;
+    padding: 0;
+    height: 100%;
+    width: 530px;
+ }
+div{
+    float:left;
+}
+
+.Paragraph{
+    width: 530px;
+    text-align:justify;
+    height: 70px;
+}
+.NhapThongTin{
+
+}
+.NhapThongTin ul li{
+    margin-top:20px;
+}
+.NhapThongTin input{
+    margin-left:210px;
+    text-align:center;
+    width:250px;
+    border: solid 1px #C0C0C0;
+    height:20px;
+    padding-top: 5px;
+    float:right
+}
+.NhapThongTin span{
+    margin-top:20px;
+}

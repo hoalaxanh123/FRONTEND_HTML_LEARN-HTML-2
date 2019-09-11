@@ -1,0 +1,60 @@
+﻿p {
+    color: green;
+    font-family: Arial;
+    font-size: 12pt;
+}
+body{
+    font-size:30px;
+    font-family:Tahoma;
+
+}
+    p#id1 {
+        color: violet;
+    }
+
+    p.class01 {
+        color: #CC9900;
+    }
+    p.tittle_Main {
+        font-weight:bold;
+        color:black;
+    }
+    p.tittle_Sub {
+        font-weight:bold;
+        font-size:40px;
+        color:black;
+    }
+
+h1 {
+    color: pink;
+}
+
+table {
+    width: 100%;
+    text-align: left;
+}
+
+table, td, th, tr {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+th {
+    font-weight: bold;
+    font-family: Arial;
+    font-size: 20px;
+    color: blue;
+}
+
+.lastname {
+    background-color: greenyellow;
+}
+
+.firtrow {
+    color: violet;
+}
+div{
+    float:left;
+    width:50%;
+    height:auto;
+}

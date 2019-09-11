@@ -1,0 +1,172 @@
+﻿.header {
+    width: 980px;
+    height: 220px;
+}
+
+    .header h3 {
+        font-style: italic;
+        margin: 150px 10px 10px 0px;
+        font-size: 28px;
+        text-align: center;
+    }
+
+    .header h4 {
+        font-style: italic;
+        margin: 10px 10px 10px 0px;
+        font-size: 15px;
+        text-align: center;
+    }
+
+    .header #logo {
+        width: 240px;
+        height: 220px;
+        background: url(images/img03.gif) no-repeat center center;
+    }
+
+    .header #Image {
+        float: right;
+        width: 740px;
+        height: 220px;
+        background: url(images/img08.jpg) no-repeat center center;
+    }
+
+.BigMain {
+    width: 980px;
+    height: 100%;
+}
+
+.NAV {
+    width: 240px;
+    height: 850px;
+}
+
+    .NAV #Menu {
+        width: 240px;
+        background: #86C328;
+        color: lightgreen;
+    }
+
+        .NAV #Menu hr {
+            float: left;
+            margin-left: -5px;
+            width: 150px;
+            margin-top: -6px;
+        }
+
+        .NAV #Menu a {
+            text-decoration: none;
+            font-size: 15px;
+            color: #FFFFFF;
+            font-weight: bold;
+            line-height: 40px;
+        }
+
+    .NAV #LoginCustommer {
+        width: 240px;
+        text-align: center;
+        background: #4095EF;
+        height: 540px;
+    }
+
+        .NAV #LoginCustommer #Login_Sub {
+            float: left;
+            margin-left: 5px;
+            color: white;
+            margin-bottom: 40px;
+            height:100%;
+        }
+        .NAV #LoginCustommer #Login_Sub h4,input{
+           float: left;
+            margin-left: 25px;
+        }
+        .NAV #LoginCustommer #Login_Sub a{
+            float:left;
+            color:white;
+            text-align:left;
+            margin-top:10px;
+            margin-left:25px;
+            width:200px;
+        }
+    
+
+.BigMain ul {
+    list-style: none;
+}
+
+.BigMain li {
+    padding: 5px;
+}
+
+.BigMain #Content {
+    float: right;
+    width: 740px;
+    height: 800px;
+}
+
+.BigMain .Box {
+    float: right;
+    padding-top: 10px;
+    width: 700px;
+    height: 780px;
+}
+
+.title2 {
+    margin: 0;
+    padding: 10px 0;
+    background: url(images/img09.gif) repeat-x left bottom;
+    font-size: 227%;
+    font-weight: normal;
+    color: #135293;
+}
+
+.Boxed {
+    margin-top: 40px;
+    width: 700px;
+    height: 300px;
+    float: right;
+    background-color: orange;
+}
+
+.Boxed_2 {
+    margin-top: 20px;
+    margin-right: 70px;
+    width: 600px;
+    height: 250px;
+    float: right;
+    background-color: orange;
+}
+
+    .Boxed_2 ul {
+        float: left;
+        padding-right: 10px;
+        line-height: 7px;
+        list-style: disc;
+        color: white;
+        width: 200px;
+    }
+
+    .Boxed_2 li a {
+        color: white;
+    }
+
+
+body {
+    width: 980px;
+    margin: 0 auto;
+    padding: 0;
+    height: 100%;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 13px;
+    color: #666666;
+}
+
+div {
+    float: left;
+}
+
+.footer {
+    margin-bottom: 400px;
+    width: 980px;
+    margin: 0 auto;
+    background: url(images/img12.gif) repeat-x;
+}
